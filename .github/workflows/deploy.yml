@@ -36,5 +36,5 @@ jobs:
         uses: ayeressian/bunnycdn-storage-deploy@master
         with:
           source: "dist"
-          storageZoneName: "${{ secrets.BUNNY_CDN_STORAGE_ZONE_NAME }"
+          storageZoneName: "${{ secrets.BUNNY_CDN_STORAGE_ZONE_NAME }}"
           accessKey: "${{ secrets.BUNNY_CDN_STORAGE_KEY }}"
