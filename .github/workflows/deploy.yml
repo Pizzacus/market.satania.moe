@@ -24,9 +24,11 @@ jobs:
           check-latest: true
 
       - name: Install pnpm
-        run: |
-          npx pnpm add -g pnpm@5.x.x
-          pnpm --version
+        uses: pnpm/action-setup@v1.2.1
+        with:
+          version: 5.x.x
+          run_install: |
+            recursive: false
 
       # Runs a single command using the runners shell
       - name: Run build script
