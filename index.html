@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <link rel="icon" href="/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vite App</title>
+	<meta charset="UTF-8">
+	<link rel="icon" href="/favicon.ico" />
+
+	<!-- Snipcart -->
+	<link rel="preconnect" href="https://app.snipcart.com" />
+	<link rel="preconnect" href="https://cdn.snipcart.com" />
+	<link rel="stylesheet" href="https://cdn.snipcart.com/themes/v3.0.27/default/snipcart.css" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Vite App</title>
 </head>
 <body>
-  <div id="app"></div>
-  <script type="module" src="/src/main.js"></script>
+	<div id="app"></div>
+	<script type="module" src="/src/main.ts"></script>
+
+	<!-- Snipcart -->
+	<script async src="https://cdn.snipcart.com/themes/v3.0.27/default/snipcart.js"></script>
+	<div
+		hidden
+		id="snipcart"
+		data-api-key="ZjQ4MGUwNjMtYjE1OC00NDk2LWFkOWMtNDU5N2M3MTI0YzllNjM3NDM5ODQ3MDQ0OTI2Njcz"
+		data-config-modal-style="side"
+	></div>
 </body>
 </html>
