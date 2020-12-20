@@ -1,8 +1,19 @@
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+:root {
+	/* --text: #2c3e50; */
+
+	--text: #293845;
+	--dim-text: #293845CC;
+	--red: #EF3340;
+	--orange: #EF8D33;
+	--green: #78A100;
+	--background: #F7F7F7;
+
+	--slight--shadow:  4px 0px 1px rgba(0, 0, 0, 0.25);
+	--moderate--shadow:  10px 0px 0px rgba(0, 0, 0, 0.2), 5px 0px 1px rgba(0, 0, 0, 0.5);
+	--thick--shadow:  28px 0px 0px rgba(0, 0, 0, 0.2), 5px 0px 1px rgba(0, 0, 0, 0.5);
+}
+
+body {
+	background: var(--background);
+	color: var(--text);
 }
