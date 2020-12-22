@@ -146,6 +146,7 @@ watch(slides, () => {
 	box-shadow: var(--thick-shadow);
 	transition: transform 0.25s, opacity 0.25s;
 	background-color: #eee;
+	background-size: cover;
 	background-image:
 		linear-gradient(180deg, #0000 60%, #000 100%),
 		var(--image);
@@ -213,5 +214,13 @@ watch(slides, () => {
 
 .prev-slide {
 	left: 25px;
+}
+
+@media (min-width: 1950px) {
+	.embla__slide, .inner-slide {
+		max-width: none;
+		width: 50vw;
+		height: 25vw;
+	}
 }
 </style>
