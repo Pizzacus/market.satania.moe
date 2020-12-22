@@ -1,0 +1,38 @@
+:root {
+	/* --text: #2c3e50; */
+
+	--text: #293845;
+	--dim-text: #293845cc;
+	--red: #ef3340;
+	--orange: #ef8d33;
+	--green: #78a100;
+	--background: #f7f7f7;
+
+	--source-sans-font: "Source Sans Variable", "Source Sans Pro";
+	--asap-font: "Asap";
+	--default-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+	--slight-shadow: 4px 0px 1px rgba(0, 0, 0, 0.25);
+	--moderate-shadow: 10px 0px 0px rgba(0, 0, 0, 0.2),
+		5px 0px 1px rgba(0, 0, 0, 0.5);
+	--thick-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.1),
+		0px 2.5px 5px rgba(0, 0, 0, 0.25);
+}
+
+body {
+	background: var(--background);
+	color: var(--text);
+	font-family: var(--source-sans-font), var(--default-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--asap-font), var(--source-sans-font), var(--default-font);
+	font-weight: 600;
+}

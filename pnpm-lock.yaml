@@ -1,9 +1,13 @@
 dependencies:
   bootstrap: 4.5.3
+  embla-carousel: 4.1.2
+  fontsource-asap: 3.1.5
+  source-sans-pro: 3.6.0
   vue: 3.0.4
   vue-router: 4.0.1_vue@3.0.4
 devDependencies:
   '@vue/compiler-sfc': 3.0.4_vue@3.0.4
+  '@vue/runtime-dom': 3.0.4
   vite: 1.0.0-rc.13
 lockfileVersion: 5.2
 packages:
@@ -729,6 +733,10 @@ packages:
     dev: true
     resolution:
       integrity: sha1-WQxhFWsK4vTwJVcyoViyZrxWsh0=
+  /embla-carousel/4.1.2:
+    dev: false
+    resolution:
+      integrity: sha512-Gg/k++bJMexaR64sLWTFonRZSYsD57DwJqd0sXcisqzrGYp1TqlDSsM5aM6o9bwUgpqc+t5dBtztZ0kzX1eQ+A==
   /emojis-list/3.0.0:
     dev: true
     engines:
@@ -850,6 +858,10 @@ packages:
         optional: true
     resolution:
       integrity: sha512-SSG5xmZh1mkPGyKzjZP8zLjltIfpW32Y5QpdNJyjcfGxK3qo3NDDkZOZSFiGn1A6SclQxY9GzEwAHQ3dmYRWpg==
+  /fontsource-asap/3.1.5:
+    dev: false
+    resolution:
+      integrity: sha512-dg/VVB6diT8cTubGkGazx8vQuzfb9UOV9sPiz2e2EHC6X185/JKYgi8O/LL8ft3IFvjN6NDWOCwfsegKSubD2A==
   /fresh/0.5.2:
     dev: true
     engines:
@@ -1923,6 +1935,10 @@ packages:
       node: '>= 8'
     resolution:
       integrity: sha512-CkCj6giN3S+n9qrYiBTX5gystlENnRW5jZeNLHpe6aue+SrHcG5VYwujhW9s4dY31mEGsxBDrHR6oI69fTXsaQ==
+  /source-sans-pro/3.6.0:
+    dev: false
+    resolution:
+      integrity: sha512-C1RFUGu+YASuqpgDRInTM7Y6OwqeWNOuKn7v0P/4Kh66epTI4PYWwPWP5kdA4l/VqzBAWiqoz5dk0trof73R7w==
   /sourcemap-codec/1.4.8:
     dev: true
     resolution:
@@ -2179,7 +2195,11 @@ packages:
       integrity: sha512-faQrqNMzcPCHGVC2aaOINk13K+aaBDUPjGWl0teOXywElLjyVAB6Oe2jj62jHYtwsU49jXhScYbvPENK+6zAvQ==
 specifiers:
   '@vue/compiler-sfc': ^3.0.0-rc.1
+  '@vue/runtime-dom': ^3.0.4
   bootstrap: ^4.5.3
+  embla-carousel: ^4.1.2
+  fontsource-asap: ^3.1.5
+  source-sans-pro: ^3.6.0
   vite: ^1.0.0-rc.1
   vue: ^3.0.4
   vue-router: ^4.0.1
