@@ -11,3 +11,9 @@ declare module "*?worker" {
 
 	export default WrappedWorker;
 }
+
+declare module "*.css" {
+	const classes: Record<string, string>;
+
+	export default classes;
+}

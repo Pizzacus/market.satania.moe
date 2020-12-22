@@ -1,0 +1,39 @@
+.baseButton {
+	display: inline-block;
+	border: none;
+	box-shadow: var(--thick-shadow),
+		inset 1px 1px 0 rgba(0, 0, 0, 0.25),
+		inset -1px -1px 0 rgba(0, 0, 0, 0.25);
+	border-radius: 4px;
+	padding: 10px 20px;
+	display: flex;
+	align-items: center;
+	font-weight: bold;
+	font-size: 24px;
+	text-shadow: var(--slight-shadow);
+}
+
+.baseButton:not(:disabled) {
+	cursor: default;
+}
+
+.bright {
+	color: #0008;
+}
+
+.bright:hover {
+	filter: brightness(0.9);
+}
+
+.dark {
+	color: #fff;
+}
+
+.dark:hover {
+	filter: brightness(1.1);
+}
+
+.greenButton {
+	composes: baseButton dark;
+	background: linear-gradient(180deg, #B5DA00 0%, #78A100 100%);
+}
