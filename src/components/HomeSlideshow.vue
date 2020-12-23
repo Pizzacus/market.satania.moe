@@ -68,6 +68,7 @@ interface SlideEntry {
 }
 
 const emblaNode: Ref<null | HTMLDivElement> = ref(null);
+
 const slides: Ref<SlideEntry[]> = ref([
 	{
 		id: "test-item-1",
@@ -130,8 +131,73 @@ onMounted(() => {
 
 		embla.value.on("init", handleInit);
 		embla.value.on("reInit", handleInit);
+
 		embla.value.on("select", () => {
-			currentSlide.value = embla.value!.selectedScrollSnap();
+			if (embla.value) {
+				// This code is meant to help with accidentally strong flicks,
+				// where the user drags the slide too hard and ends up skipping a slide
+
+				// CAVEAT: The "select" event does not trigger if the slidehow loops
+				// and ends up on the same slide it started with.
+				// So we cannot prevent flicks that are so strong yet precise that they
+				// loop the whole carousel around and end on the same slide.
+
+				// CAVEAT: Another unrelated caveat of this code is that it doesn't
+				// prevent the "loop around" animation from playing, so if the user
+				// flicks so hard they loop the whole carousel, it'll still end up
+				// on the right index, capped by this code, but it will loop the
+				// entire thing to get to it.
+
+				// I tested, it is possible to do both on the website, but very hard.
+				// It wouldn't happen accidentally.
+				const engine = embla.value.dangerouslyGetEngine();
+
+				// Direction of the cursor at the time the button was released
+				// 0 no direction, -1 backward, 1 forward
+				// Note that the carousel scrolls with the cursor, and therefore
+				// the indexes move in the opposite direction,
+				// so if the direction is -1, the index should increase
+				const direction = engine.scrollBody.direction();
+
+				if (direction === 0) {
+					// It is possible the cursor had no direction at the end of
+					// the flick if the user stops their cursor right before the end
+					// In this case, we don't do anything because it was likely
+					// a slow slide, so it was probably precise enough
+					return;
+				}
+
+				let newSlide = embla.value.selectedScrollSnap();
+				let oldSlide = currentSlide.value;
+
+				// We must take looping into account, for instance, the user can
+				// go forward and still end up on a slide with a lower index if
+				// the carousel looped around
+
+				if (direction <= -1) {
+					// If the cursor was moving backward, the index should have increased
+					while (newSlide < oldSlide) {
+						newSlide += totalSlides.value;
+					}
+				} else if (direction >= 1) {
+					// If the cursor was moving forward, the index should have decreased
+					while (newSlide > oldSlide) {
+						newSlide -= totalSlides.value;
+					}
+				}
+
+				// Then finally, we can know how many slides were scrolled
+				// If we hadn't normalised the newSlide value, then our code
+				// would think the entire carousel was travelled when it loops!
+				let slideChange = newSlide - oldSlide;
+
+				if (Math.abs(slideChange) >= 2) {
+					slideChange = Math.max(-1, Math.min(1, slideChange));
+					embla.value.scrollTo((oldSlide + slideChange) % totalSlides.value);
+				}
+
+				currentSlide.value = embla.value.selectedScrollSnap();
+			}
 		});
 	}
 });
