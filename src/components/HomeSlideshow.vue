@@ -59,6 +59,9 @@ import buttons from "../styles/buttons.module.css";
 import type { Ref } from "vue";
 import EmblaCarousel from "embla-carousel";
 
+const emblaNode: Ref<null | HTMLDivElement> = ref(null);
+const embla: Ref<null | ReturnType<typeof EmblaCarousel>> = shallowRef(null);
+
 interface SlideEntry {
 	id: string;
 	background: string;
@@ -66,8 +69,6 @@ interface SlideEntry {
 	description: string;
 	price: string;
 }
-
-const emblaNode: Ref<null | HTMLDivElement> = ref(null);
 
 const slides: Ref<SlideEntry[]> = ref([
 	{
@@ -100,16 +101,17 @@ const slides: Ref<SlideEntry[]> = ref([
 	},
 ]);
 
-let embla: Ref<ReturnType<typeof EmblaCarousel> | null> = shallowRef(null);
-let currentSlide: Ref<number> = ref(0);
-let totalSlides: Ref<number> = ref(0);
+const currentSlide: Ref<number> = ref(0);
+const totalSlides: Ref<number> = ref(0);
 
 function handleSlideClick(event: MouseEvent) {
 	const slide = event.currentTarget as HTMLDivElement;
 
+	// This scrolls to unselected slides when they are clicked
 	if (embla.value && !slide.classList.contains("is-selected") && embla.value.clickAllowed()) {
 		const slideNum = embla.value.slideNodes().indexOf(slide);
 		embla.value.scrollTo(slideNum);
+
 		event.preventDefault();
 		event.stopPropagation();
 	}
