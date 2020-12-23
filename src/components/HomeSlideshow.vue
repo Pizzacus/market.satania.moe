@@ -19,7 +19,15 @@
 						<div class="product-actions">
 							<div class="product-price">{{ slide.price }}</div>
 
-							<button :class="buttons.greenButton">OwO</button>
+							<button :class="buttons.greenButton">
+								<img
+									src="/assets/shopping-cart.svg"
+									alt=""
+									role="presentation"
+									class="add-to-cart-icon"
+								/>
+								Add to cart
+							</button>
 						</div>
 					</div>
 				</div>
@@ -33,6 +41,15 @@
 		<button class="slide-controls next-slide" @click.left="embla?.scrollNext()">
 			<img src="/assets/next-slide.svg" alt="Next slide" />
 		</button>
+
+		<div class="mobile-slide-nav">
+			<button
+				v-for="i in totalSlides"
+				class="slide-button"
+				:class="{ selected: currentSlide === i - 1 }"
+				@click.left="embla?.scrollTo(i - 1)"
+			/>
+		</div>
 	</div>
 </template>
 
@@ -83,6 +100,8 @@ const slides: Ref<SlideEntry[]> = ref([
 ]);
 
 let embla: Ref<ReturnType<typeof EmblaCarousel> | null> = shallowRef(null);
+let currentSlide: Ref<number> = ref(0);
+let totalSlides: Ref<number> = ref(0);
 
 function handleSlideClick(event: MouseEvent) {
 	const slide = event.currentTarget as HTMLDivElement;
@@ -100,6 +119,19 @@ onMounted(() => {
 		embla.value = EmblaCarousel(emblaNode.value, {
 			loop: true,
 			inViewThreshold: 1,
+		});
+
+		function handleInit() {
+			if (embla.value) {
+				currentSlide.value = embla.value.selectedScrollSnap();
+				totalSlides.value = embla.value.scrollSnapList().length;
+			}
+		}
+
+		embla.value.on("init", handleInit);
+		embla.value.on("reInit", handleInit);
+		embla.value.on("select", () => {
+			currentSlide.value = embla.value!.selectedScrollSnap();
 		});
 	}
 });
@@ -137,7 +169,7 @@ watch(slides, () => {
 }
 
 .inner-slide {
-	width: 100vw;
+	width: 100%;
 	max-width: 1000px;
 	height: 500px;
 	border-radius: 20px;
@@ -150,15 +182,11 @@ watch(slides, () => {
 	background-image:
 		linear-gradient(180deg, #0000 60%, #000 100%),
 		var(--image);
+	background-position: center;
 }
 
 .embla__slide:not(.is-selected) {
 	cursor: pointer;
-}
-
-.embla__slide:not(.is-selected) .inner-slide {
-	transform: scale(0.92);
-	opacity: 0.5;
 }
 
 .slide-info {
@@ -170,6 +198,10 @@ watch(slides, () => {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+}
+
+.product-name {
+	flex: 1;
 }
 
 .product-name h1 {
@@ -193,6 +225,13 @@ watch(slides, () => {
 	margin-right: 30px;
 }
 
+.add-to-cart-icon {
+	width: 32px;
+	height: 32px;
+	margin-right: 12px;
+	filter: var(--slight-shadow-filter);
+}
+
 .product-actions {
 	display: flex;
 }
@@ -201,11 +240,11 @@ watch(slides, () => {
 	background: transparent;
 	border: none;
 	position: absolute;
-	top: 50%;
+	bottom: 50%;
 }
 
 .slide-controls img {
-	filter: drop-shadow(0px 1px 5px rgba(0, 0, 0, 0.5));
+	filter: var(--thick-shadow-filter);
 }
 
 .next-slide {
@@ -216,11 +255,112 @@ watch(slides, () => {
 	left: 25px;
 }
 
+.mobile-slide-nav {
+	height: 20px;
+	background: #000;
+	display: none;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.slide-button {
+	width: 10px;
+	height: 10px;
+	background: rgba(255, 255, 255, 0.45);
+	margin: 0 5px;
+	border-radius: 100%;
+	border: none;
+	padding: 0;
+}
+
+.slide-button.selected {
+	background: #fff;
+}
+
 @media (min-width: 1950px) {
 	.embla__slide, .inner-slide {
 		max-width: none;
 		width: 50vw;
 		height: 25vw;
+	}
+}
+
+@media (max-width: 1300px) {
+	.slide-controls {
+		background: #0006;
+		padding: 8px 4px;
+	}
+
+	.slide-controls img {
+		filter: none;
+	}
+
+	.next-slide {
+		right: 0;
+	}
+
+	.prev-slide {
+		left: 0;
+	}
+}
+
+@media (min-width: 1080.02px) {
+	.embla__slide:not(.is-selected) .inner-slide {
+		transform: scale(0.92);
+		opacity: 0.5;
+	}
+}
+
+@media (max-width: 1080px) {
+	.embla__slide, .inner-slide {
+		max-width: none;
+		width: 100%;
+		border-radius: 0;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.slide-info {
+		left: 8px;
+		right: 8px;
+		bottom: 8px;
+		align-items: flex-end;
+	}
+	.embla__slide, .inner-slide {
+		height: 100vw;
+		min-height: 360px;
+		box-shadow: none;
+	}
+	.product-name h1 {
+		font-size: 24px;
+	}
+
+	.product-name p {
+		font-size: 12px;
+	}
+
+	.product-actions {
+		flex-direction: column;
+	}
+
+	.product-price {
+		font-size: 24px;
+		text-align: end;
+		margin: 0;
+	}
+
+	.slide-controls {
+		display: none;
+	}
+
+	.add-to-cart-icon {
+		width: 24px;
+		height: 24px;
+		margin-right: 8px;
+	}
+
+	.mobile-slide-nav {
+		display: flex;
 	}
 }
 </style>

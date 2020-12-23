@@ -8,9 +8,18 @@
 	padding: 10px 20px;
 	display: flex;
 	align-items: center;
+	justify-content: center;
 	font-weight: bold;
 	font-size: 24px;
 	text-shadow: var(--slight-shadow);
+	text-align: center;
+}
+
+@media (max-width: 767.98px) {
+	.baseButton {
+		font-size: 18px;
+		padding: 8px 16px;
+	}
 }
 
 .baseButton:not(:disabled) {
