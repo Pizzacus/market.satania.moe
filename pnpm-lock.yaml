@@ -7,7 +7,6 @@ dependencies:
   vue-router: 4.0.1_vue@3.0.4
 devDependencies:
   '@vue/compiler-sfc': 3.0.4_vue@3.0.4
-  '@vue/runtime-dom': 3.0.4
   vite: 1.0.0-rc.13
 lockfileVersion: 5.2
 packages:
@@ -2194,8 +2193,7 @@ packages:
     resolution:
       integrity: sha512-faQrqNMzcPCHGVC2aaOINk13K+aaBDUPjGWl0teOXywElLjyVAB6Oe2jj62jHYtwsU49jXhScYbvPENK+6zAvQ==
 specifiers:
-  '@vue/compiler-sfc': ^3.0.0-rc.1
-  '@vue/runtime-dom': ^3.0.4
+  '@vue/compiler-sfc': ^3.0.4
   bootstrap: ^4.5.3
   embla-carousel: ^4.1.2
   fontsource-asap: ^3.1.5
