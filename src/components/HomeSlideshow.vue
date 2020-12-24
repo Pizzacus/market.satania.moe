@@ -34,13 +34,15 @@
 			</div>
 		</div>
 
-		<button class="slide-controls prev-slide" @click.left="embla?.scrollPrev()">
-			<img src="/assets/prev-slide.svg" alt="Previous slide" />
-		</button>
+		<div @mouseover="slideManager.stop()" @mouseout="slideManager.start()">
+			<button class="slide-controls prev-slide" @click.left="embla?.scrollPrev()">
+				<img src="/assets/prev-slide.svg" alt="Previous slide" />
+			</button>
 
-		<button class="slide-controls next-slide" @click.left="embla?.scrollNext()">
-			<img src="/assets/next-slide.svg" alt="Next slide" />
-		</button>
+			<button class="slide-controls next-slide" @click.left="embla?.scrollNext()">
+				<img src="/assets/next-slide.svg" alt="Next slide" />
+			</button>
+		</div>
 
 		<div class="mobile-slide-nav">
 			<button
@@ -458,6 +460,7 @@ watch(slides, () => {
 	display: flex;
 	justify-content: center;
 	padding-top: 15px;
+	padding-bottom: 5px;
 }
 
 .desktop-slide-nav .slide-button {
