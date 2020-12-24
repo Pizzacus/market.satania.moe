@@ -471,12 +471,16 @@ watch(slides, () => {
 		90deg,
 		var(--text) 0%,
 		var(--text) var(--progress),
-		transparent var(--progress)
+		var(--background) var(--progress)
 	);
 	border: 3px solid var(--text);
 	padding: 0;
 	margin: 0 5px;
 	border-radius: 4px;
+}
+
+.desktop-slide-nav .slide-button.selected {
+	box-shadow: 0 0 4px 1px var(--text);
 }
 
 @media (min-width: 1950px) {
