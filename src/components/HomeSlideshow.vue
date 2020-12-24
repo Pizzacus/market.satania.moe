@@ -60,7 +60,7 @@
 					'--progress': currentSlide > i - 1
 						? '100%'
 						: currentSlide === i - 1
-							? (progressToSlide * 100) + '%'
+							? Math.round(progressToSlide * 100) + '%'
 							: '0%',
 				}"
 				@click.left="absoluteScrollTo(i - 1)"
@@ -470,7 +470,7 @@ watch(slides, () => {
 		var(--text) var(--progress),
 		transparent var(--progress)
 	);
-	border: 2px solid var(--text);
+	border: 3px solid var(--text);
 	padding: 0;
 	margin: 0 5px;
 	border-radius: 4px;
