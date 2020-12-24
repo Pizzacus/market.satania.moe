@@ -1,17 +1,11 @@
 <template>
 	<div class="home">
 		<home-slideshow />
+		<region-selector />
 	</div>
 </template>
 
-<script lang="ts">
-import { defineComponent } from "vue";
+<script setup lang="ts">
 import HomeSlideshow from "../components/HomeSlideshow.vue";
-
-export default defineComponent({
-	name: "Home",
-	components: {
-		HomeSlideshow,
-	},
-});
+import RegionSelector from "../components/RegionSelector.vue";
 </script>
