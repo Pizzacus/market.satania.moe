@@ -1,6 +1,6 @@
 <template>
 	<div class="embla" ref="emblaNode">
-		<div class="embla__container">
+		<div class="embla__container" @mouseover="slideManager.stop()" @mouseout="slideManager.start()">
 			<div
 				class="embla__slide"
 				v-for="slide in slides"
@@ -50,11 +50,27 @@
 				@click.left="embla?.scrollTo(i - 1)"
 			/>
 		</div>
+
+		<div class="desktop-slide-nav">
+			<button
+				v-for="i in totalSlides"
+				class="slide-button"
+				:class="{ selected: currentSlide === i - 1 }"
+				:style="{
+					'--progress': currentSlide > i - 1
+						? '100%'
+						: currentSlide === i - 1
+							? (progressToSlide * 100) + '%'
+							: '0%',
+				}"
+				@click.left="embla?.scrollTo(i - 1)"
+			/>
+		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { defineComponent, onMounted, ref, watch, shallowRef } from "vue";
+import { defineComponent, onMounted, ref, watch, shallowRef, onUnmounted } from "vue";
 import buttons from "../styles/buttons.module.css";
 import type { Ref } from "vue";
 import EmblaCarousel from "embla-carousel";
@@ -104,6 +120,84 @@ const slides: Ref<SlideEntry[]> = ref([
 const currentSlide: Ref<number> = ref(0);
 const totalSlides: Ref<number> = ref(0);
 
+const slideManager = {
+	playing: false,
+	timeout: null as null | number,
+	slideTime: null as null | number,
+	delay: 5000,
+	start() {
+		if (!this.playing) {
+			this.playing = true;
+			this.resetDelay();
+		}
+	},
+	stop() {
+		if (this.playing) {
+			this.playing = false;
+			this._clearTimeout();
+		}
+	},
+	resetDelay() {
+		const nextSlide = () => {
+			embla.value?.scrollNext();
+			console.log("next!");
+			this._clearTimeout();
+			this.resetDelay();
+		}
+
+		if (this.playing) {
+			this._clearTimeout();
+			this.timeout = window.setTimeout(nextSlide.bind(this), this.delay);
+			this.slideTime = performance.now() + this.delay;
+		}
+	},
+	_clearTimeout() {
+		if (this.timeout != null) {
+			window.clearTimeout(this.timeout);
+			this.timeout = null;
+			this.slideTime = null;
+		}
+	},
+	timeUntilSlide(): null | number {
+		if (this.slideTime != null) {
+			return this.slideTime - performance.now();
+		} else {
+			return null;
+		}
+	},
+	progressToSlide(): number {
+		const time = this.timeUntilSlide();
+
+		if (time != null) {
+			return 1 - (time / this.delay);
+		} else {
+			return 0;
+		}
+	}
+}
+
+const progressToSlide: Ref<Number> = ref(0);
+
+window.requestAnimationFrame(function loop () {
+	progressToSlide.value = slideManager.progressToSlide();
+	window.requestAnimationFrame(loop);
+});
+
+function visibilityListener() {
+	if (document.hidden) {
+		slideManager.stop();
+	} else {
+		slideManager.start();
+	}
+}
+
+document.addEventListener("visibilitychange", visibilityListener);
+
+onUnmounted(() => {
+	slideManager.stop();
+	document.removeEventListener("visibilitychange", visibilityListener);
+});
+
 function handleSlideClick(event: MouseEvent) {
 	const slide = event.currentTarget as HTMLDivElement;
 
@@ -126,6 +220,7 @@ onMounted(() => {
 
 		function handleInit() {
 			if (embla.value) {
+				slideManager.start();
 				currentSlide.value = embla.value.selectedScrollSnap();
 				totalSlides.value = embla.value.scrollSnapList().length;
 			}
@@ -135,6 +230,8 @@ onMounted(() => {
 		embla.value.on("reInit", handleInit);
 
 		embla.value.on("select", () => {
+			console.log("hello my select");
+			slideManager.resetDelay();
 			if (embla.value) {
 				// This code is meant to help with accidentally strong flicks,
 				// where the user drags the slide too hard and ends up skipping a slide
@@ -167,34 +264,34 @@ onMounted(() => {
 					// In this case, we don't do anything because it was likely
 					// a slow slide, so it was probably precise enough
 
-				let newSlide = embla.value.selectedScrollSnap();
-				let oldSlide = currentSlide.value;
+					let newSlide = embla.value.selectedScrollSnap();
+					let oldSlide = currentSlide.value;
 
-				// We must take looping into account, for instance, the user can
-				// go forward and still end up on a slide with a lower index if
-				// the carousel looped around
+					// We must take looping into account, for instance, the user can
+					// go forward and still end up on a slide with a lower index if
+					// the carousel looped around
 
-				if (direction <= -1) {
-					// If the cursor was moving backward, the index should have increased
-					while (newSlide < oldSlide) {
-						newSlide += totalSlides.value;
+					if (direction <= -1) {
+						// If the cursor was moving backward, the index should have increased
+						while (newSlide < oldSlide) {
+							newSlide += totalSlides.value;
+						}
+					} else if (direction >= 1) {
+						// If the cursor was moving forward, the index should have decreased
+						while (newSlide > oldSlide) {
+							newSlide -= totalSlides.value;
+						}
 					}
-				} else if (direction >= 1) {
-					// If the cursor was moving forward, the index should have decreased
-					while (newSlide > oldSlide) {
-						newSlide -= totalSlides.value;
+
+					// Then finally, we can know how many slides were scrolled
+					// If we hadn't normalised the newSlide value, then our code
+					// would think the entire carousel was travelled when it loops!
+					let slideChange = newSlide - oldSlide;
+
+					if (Math.abs(slideChange) >= 2) {
+						slideChange = Math.max(-1, Math.min(1, slideChange));
+						embla.value.scrollTo((oldSlide + slideChange) % totalSlides.value);
 					}
-				}
-
-				// Then finally, we can know how many slides were scrolled
-				// If we hadn't normalised the newSlide value, then our code
-				// would think the entire carousel was travelled when it loops!
-				let slideChange = newSlide - oldSlide;
-
-				if (Math.abs(slideChange) >= 2) {
-					slideChange = Math.max(-1, Math.min(1, slideChange));
-					embla.value.scrollTo((oldSlide + slideChange) % totalSlides.value);
-				}
 				}
 
 				currentSlide.value = embla.value.selectedScrollSnap();
@@ -330,7 +427,7 @@ watch(slides, () => {
 	align-items: flex-start;
 }
 
-.slide-button {
+.mobile-slide-nav .slide-button {
 	width: 10px;
 	height: 10px;
 	background: rgba(255, 255, 255, 0.45);
@@ -340,8 +437,30 @@ watch(slides, () => {
 	padding: 0;
 }
 
-.slide-button.selected {
+.mobile-slide-nav .slide-button.selected {
 	background: #fff;
+}
+
+.desktop-slide-nav {
+	display: flex;
+	justify-content: center;
+	padding-top: 15px;
+}
+
+.desktop-slide-nav .slide-button {
+	width: 50px;
+	height: 15px;
+	background: var(--text);
+	background: linear-gradient(
+		90deg,
+		var(--text) 0%,
+		var(--text) var(--progress),
+		transparent var(--progress)
+	);
+	border: 2px solid var(--text);
+	padding: 0;
+	margin: 0 5px;
+	border-radius: 4px;
 }
 
 @media (min-width: 1950px) {
@@ -428,6 +547,10 @@ watch(slides, () => {
 
 	.mobile-slide-nav {
 		display: flex;
+	}
+
+	.desktop-slide-nav {
+		display: none;
 	}
 }
 </style>
