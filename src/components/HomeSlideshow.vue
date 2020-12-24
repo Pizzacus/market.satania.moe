@@ -47,7 +47,7 @@
 				v-for="i in totalSlides"
 				class="slide-button"
 				:class="{ selected: currentSlide === i - 1 }"
-				@click.left="embla?.scrollTo(i - 1)"
+				@click.left="absoluteScrollTo(i - 1)"
 			/>
 		</div>
 
@@ -63,7 +63,7 @@
 							? (progressToSlide * 100) + '%'
 							: '0%',
 				}"
-				@click.left="embla?.scrollTo(i - 1)"
+				@click.left="absoluteScrollTo(i - 1)"
 			/>
 		</div>
 	</div>
@@ -196,6 +196,7 @@ document.addEventListener("visibilitychange", visibilityListener);
 onUnmounted(() => {
 	slideManager.stop();
 	document.removeEventListener("visibilitychange", visibilityListener);
+	embla.value?.destroy();
 });
 
 function handleSlideClick(event: MouseEvent) {
@@ -209,6 +210,18 @@ function handleSlideClick(event: MouseEvent) {
 		event.preventDefault();
 		event.stopPropagation();
 	}
+}
+
+let slideCap = true;
+
+function absoluteScrollTo(slideNum : number) {
+	// This is pretty hacky, the "select" event listener checks this variable
+	// and it is used tot ell it to not cap the scroll.
+	// A better way to do this would be to determine if the scroll was caused
+	// by a drag or by a button, but I didnt't figure it out.
+	slideCap = false;
+	embla.value?.scrollTo(slideNum);
+	slideCap = true;
 }
 
 onMounted(() => {
@@ -258,7 +271,7 @@ onMounted(() => {
 				// so if the direction is -1, the index should increase
 				const direction = engine.scrollBody.direction();
 
-				if (direction !== 0) {
+				if (direction !== 0 && slideCap) {
 					// It is possible the cursor had no direction at the end of
 					// the flick if the user stops their cursor right before the end
 					// In this case, we don't do anything because it was likely
