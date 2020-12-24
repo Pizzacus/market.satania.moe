@@ -161,13 +161,11 @@ onMounted(() => {
 				// so if the direction is -1, the index should increase
 				const direction = engine.scrollBody.direction();
 
-				if (direction === 0) {
+				if (direction !== 0) {
 					// It is possible the cursor had no direction at the end of
 					// the flick if the user stops their cursor right before the end
 					// In this case, we don't do anything because it was likely
 					// a slow slide, so it was probably precise enough
-					return;
-				}
 
 				let newSlide = embla.value.selectedScrollSnap();
 				let oldSlide = currentSlide.value;
@@ -196,6 +194,7 @@ onMounted(() => {
 				if (Math.abs(slideChange) >= 2) {
 					slideChange = Math.max(-1, Math.min(1, slideChange));
 					embla.value.scrollTo((oldSlide + slideChange) % totalSlides.value);
+				}
 				}
 
 				currentSlide.value = embla.value.selectedScrollSnap();
