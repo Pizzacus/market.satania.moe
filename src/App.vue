@@ -15,7 +15,7 @@ import type { GlobalState } from "./state";
 // This state is shared by the entire app
 // this is simpler than using Vuex it saves me time pls understand
 const data: GlobalState = reactive({
-    currency: "EUR",
+    currency: "usd",
     country: "fr",
 });
 

@@ -1,7 +1,9 @@
 import { InjectionKey } from "vue";
 
+export type Currency = "aud" | "gbp" | "eur" | "nzd" | "sgd" | "usd";
+
 export interface GlobalState {
-	currency: string;
+	currency: Currency;
 	country: string;
 }
 
