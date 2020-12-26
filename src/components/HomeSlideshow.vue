@@ -96,14 +96,6 @@ function getFeaturedImage(product: Product) {
 const emblaNode: Ref<null | HTMLDivElement> = ref(null);
 const embla: Ref<null | ReturnType<typeof EmblaCarousel>> = shallowRef(null);
 
-interface SlideEntry {
-	id: string;
-	background: string;
-	title: string;
-	description: string;
-	price: string;
-}
-
 const currentSlide: Ref<number> = ref(0);
 const totalSlides: Ref<number> = ref(0);
 
@@ -127,8 +119,9 @@ const slideManager = {
 	resetDelay() {
 		const nextSlide = () => {
 			embla.value?.scrollNext();
-			this._clearTimeout();
-			this.resetDelay();
+			// Reportedly, that helps with the slideshow getting messed up
+			// when the tab is left inactive for a while
+			window.requestAnimationFrame(() => this.resetDelay());
 		}
 
 		if (this.playing) {
@@ -208,6 +201,8 @@ function absoluteScrollTo(slideNum : number) {
 	slideCap = false;
 	embla.value?.scrollTo(slideNum);
 	slideCap = true;
+
+	slideManager.resetDelay();
 }
 
 onMounted(() => {
@@ -229,7 +224,6 @@ onMounted(() => {
 		embla.value.on("reInit", handleInit);
 
 		embla.value.on("select", () => {
-			slideManager.resetDelay();
 			if (embla.value) {
 				// This code is meant to help with accidentally strong flicks,
 				// where the user drags the slide too hard and ends up skipping a slide
