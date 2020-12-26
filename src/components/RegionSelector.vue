@@ -5,10 +5,10 @@
 			
 			<p>
 				<label for="country-select">Ship to</label>
-				<select name="country" id="country-select">
-					<option value="wip">WIP</option>
-					<option value="owo">OwO</option>
-					<option value="uwu">UwU</option>
+				<select name="country" id="country-select" v-model="state.country">
+					<option v-for="country in sortedCountries" :value="country.id.toLowerCase()">
+						{{ country.name }}
+					</option>
 				</select>
 			</p>
 
@@ -30,8 +30,16 @@
 </template>
 
 <script setup lang="ts">
-import { useContext, inject } from "vue";
+import { inject } from "vue";
 import stateKey from "../state";
+import { countries } from "countries-list";
+
+const sortedCountries = Object.entries(countries)
+	.map(([id, country]) => ({
+		id,
+		...country
+	}))
+	.sort((a, b) => a.name.localeCompare(b.name));
 
 const state = inject(stateKey);
 
