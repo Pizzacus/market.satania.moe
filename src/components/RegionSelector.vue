@@ -1,7 +1,7 @@
 <template>
 	<div class="region-selector">
 		<div class="region-selector-content">
-			<img src="/assets/map-pin.svg" alt="" role="presentation" />
+			<img class="pin-icon" src="/assets/map-pin.svg" alt="" role="presentation" />
 			
 			<p>
 				<label for="country-select">Ship to</label>
@@ -16,10 +16,13 @@
 
 			<p>
 				<label for="currency-select">Pay with</label>
-				<select name="currency" id="currency-select">
-					<option value="wip">WIP</option>
-					<option value="owo">OwO</option>
-					<option value="uwu">UwU</option>
+				<select name="currency" id="currency-select" v-model="state.currency">
+					<option value="aud">Australian dollar (AU$)</option>
+					<option value="gbp">British pound (£)</option>
+					<option value="eur">Euro (€)</option>
+					<option value="nzd">New Zealand dollar (NZ$)</option>
+					<option value="sgd">Singapore dollar (SG$)</option>
+					<option value="usd">US dollar (US$)</option>
 				</select>
 			</p>
 		</div>
@@ -42,6 +45,7 @@ if (!state) {
 	height: 80px;
 	background: var(--gray);
 	margin-top: 20px;
+	margin-bottom: 40px;
 	border-top: 1px solid rgba(0, 0, 0, 0.3);
 	border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
@@ -72,7 +76,8 @@ select {
 	background: #fff;
 	border: 1px solid rgba(0, 0, 0, 0.3);
 	border-radius: 3px;
-	min-width: 150px;
+	width: 225px;
+	text-overflow: ellipsis;
 }
 
 .separator {
@@ -83,5 +88,58 @@ select {
 
 p {
 	margin: 0;
+}
+
+@media (max-width: 767.98px) {
+	.region-selector {
+		height: 48px;
+		margin-top: 0;
+	}
+
+	.region-selector-content {
+		display: flex;
+	}
+
+	.pin-icon {
+		display: none;
+	}
+
+	.separator {
+		flex: none;
+		height: 32px;
+	}
+
+	.region-selector-content > *:not(:last-child) {
+		margin-right: 0;
+	}
+
+	p {
+		position: relative;
+		flex: 1;
+		width: 100%;
+		height: 100%;
+	}
+
+	label {
+		position: absolute;
+		top: 8px;
+		left: 10px;
+		font-weight: 600;
+		font-size: 12px;
+	}
+
+	select {
+		width: 100%;
+		height: 100%;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+		appearance: none;
+		background: transparent url("/assets/triangle.svg") no-repeat right 12px center/8px 10px;
+		font-weight: bold;
+		font-size: 14px;
+		border: none;
+		padding-left: 10px;
+		padding-top: 20px;
+	}
 }
 </style>
