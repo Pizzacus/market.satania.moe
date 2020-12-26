@@ -93,28 +93,28 @@ const slides: Ref<SlideEntry[]> = ref([
 		id: "test-item-1",
 		background: "url(https://picsum.photos/1000/500?unique1)",
 		title: "100% devilish",
-		description: "Black unisex <b>T-shirt</b>, 100% cotton<br/>Made by <b>Deesco#1939</b>",
+		description: "Black <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
 		price: "US $24",
 	},
 	{
 		id: "test-item-2",
 		background: "url(https://picsum.photos/1000/500?unique2)",
 		title: "100% devilish",
-		description: "Black unisex <b>T-shirt</b>, 100% cotton<br/>Made by <b>Deesco#1939</b>",
+		description: "Black <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
 		price: "US $24",
 	},
 	{
 		id: "test-item-3",
 		background: "url(https://picsum.photos/1000/500?unique3)",
 		title: "100% devilish",
-		description: "Black unisex <b>T-shirt</b>, 100% cotton<br/>Made by <b>Deesco#1939</b>",
+		description: "Black <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
 		price: "US $24",
 	},
 	{
 		id: "test-item-4",
 		background: "url(https://picsum.photos/1000/500?unique4)",
 		title: "100% devilish",
-		description: "Black unisex <b>T-shirt</b>, 100% cotton<br/>Made by <b>Deesco#1939</b>",
+		description: "Black <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
 		price: "US $24",
 	},
 ]);
@@ -354,7 +354,7 @@ watch(slides, () => {
 	border-radius: 20px;
 	overflow: hidden;
 	position:relative;
-	box-shadow: var(--thick-shadow);
+	box-shadow: var(--large-shadow);
 	transition: transform 0.25s, opacity 0.25s;
 	background-color: #eee;
 	background-size: cover;
@@ -408,7 +408,7 @@ watch(slides, () => {
 	width: 32px;
 	height: 32px;
 	margin-right: 12px;
-	filter: var(--slight-shadow-filter);
+	filter: var(--very-small-shadow-filter);
 }
 
 .product-actions {
@@ -423,7 +423,7 @@ watch(slides, () => {
 }
 
 .slide-controls img {
-	filter: var(--thick-shadow-filter);
+	filter: var(--large-shadow-filter);
 }
 
 .next-slide {

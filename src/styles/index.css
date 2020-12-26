@@ -7,7 +7,7 @@
 	--orange: #ef8d33;
 	--green: #78a100;
 	--background: #f7f7f7;
-	--gray: #E5E5E5;
+	--gray: #e5e5e5;
 
 	--source-sans-font: "Source Sans Variable", "Source Sans Pro";
 	--asap-font: "Asap";
@@ -15,16 +15,20 @@
 		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
 		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 
-	--slight-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
-	--moderate-shadow: 10px 0px 0px rgba(0, 0, 0, 0.2),
+	--very-small-shadow: 0px 1px 4px rgba(0, 0, 0, 0.25);
+	--small-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25),
+		0px 2px 4px rgba(0, 0, 0, 0.25);
+	--medium-shadow: 10px 0px 0px rgba(0, 0, 0, 0.2),
 		5px 0px 1px rgba(0, 0, 0, 0.5);
-	--thick-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.1),
+	--large-shadow: 0px 0px 16px 8px rgba(0, 0, 0, 0.1),
 		0px 2.5px 5px rgba(0, 0, 0, 0.25);
 
-	--slight-shadow-filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
-	--moderate-shadow-filter: drop-shadow(10px 0px 0px rgba(0, 0, 0, 0.2))
+	--very-small-shadow-filter: drop-shadow(0px 1px 4px rgba(0, 0, 0, 0.25));
+	--small-shadow-filter: drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25))
+		drop-shadow(0px 2px 4px rgba(0, 0, 0, 0.25));
+	--medium-shadow-filter: drop-shadow(10px 0px 0px rgba(0, 0, 0, 0.2))
 		drop-shadow(5px 0px 1px rgba(0, 0, 0, 0.5));
-	--thick-shadow-filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.1))
+	--large-shadow-filter: drop-shadow(0px 0px 16px rgba(0, 0, 0, 0.1))
 		drop-shadow(0px 2.5px 5px rgba(0, 0, 0, 0.75));
 }
 

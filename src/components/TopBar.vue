@@ -21,7 +21,7 @@ header {
 	left: 8px;
 	top: 8px;
 	z-index: 666;
-	filter: var(--thick-shadow-filter);
+	filter: var(--large-shadow-filter);
 }
 
 @media (max-width: 767.98px) {
