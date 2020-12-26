@@ -1,0 +1,122 @@
+[
+	{
+		"id": "100-percent-devilish",
+		"name": "100% Devilish",
+		"description": "Black <b>Hoodie</b><br/>Made by <b>Deesco#1939</b>",
+		"url": "/products.json",
+		"price": {
+			"aud": 12.3,
+			"gbp": 12.3,
+			"eur": 12.3,
+			"nzd": 12.3,
+			"sgd": 12.3,
+			"usd": 12.3
+		},
+		"image": "https://picsum.photos/400?unique0",
+		"metadata": {
+			"detailedImages": [
+				"https://picsum.photos/1000/500?unique1",
+				"https://picsum.photos/1000/500?unique2",
+				"https://picsum.photos/1000/500?unique3"
+			],
+			"closeupImage": "https://picsum.photos/400?uniquec0",
+			"featuredImageIndex": 3,
+			"productType": "hoodie"
+		},
+		"customFields": [{
+			"name": "Size",
+			"options": "S|M|L|XL|2XL|3XL|4XL|5XL",
+			"type": "dropdown"
+		}]
+	},
+	{
+		"id": "101-percent-devilish",
+		"name": "101% Devilish",
+		"description": "Black <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
+		"url": "/products.json",
+		"price": {
+			"aud": 123,
+			"gbp": 123,
+			"eur": 123,
+			"nzd": 123,
+			"sgd": 123,
+			"usd": 123
+		},
+		"image": "https://picsum.photos/400?unique1",
+		"metadata": {
+			"detailedImages": [
+				"https://picsum.photos/1000/500?unique4",
+				"https://picsum.photos/1000/500?unique5",
+				"https://picsum.photos/1000/500?unique6"
+			],
+			"closeupImage": "https://picsum.photos/400?uniquec1",
+			"featuredImageIndex": 3,
+			"productType": "shirt"
+		},
+		"customFields": [{
+			"name": "Size",
+			"options": "S|M|L|XL|2XL|3XL|4XL|5XL",
+			"type": "dropdown"
+		}]
+	},
+	{
+		"id": "102-percent-devilish",
+		"name": "102% Devilish",
+		"description": "Black heather <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
+		"url": "/products.json",
+		"price": {
+			"aud": 1.23,
+			"gbp": 1.23,
+			"eur": 1.23,
+			"nzd": 1.23,
+			"sgd": 1.23,
+			"usd": 1.23
+		},
+		"image": "https://picsum.photos/400?unique2",
+		"metadata": {
+			"detailedImages": [
+				"https://picsum.photos/1000/500?unique7",
+				"https://picsum.photos/1000/500?unique8",
+				"https://picsum.photos/1000/500?unique9"
+			],
+			"closeupImage": "https://picsum.photos/400?uniquec2",
+			"featuredImageIndex": 3,
+			"productType": "shirt"
+		},
+		"customFields": [{
+			"name": "Size",
+			"options": "S|M|L|XL|2XL|3XL|4XL|5XL",
+			"type": "dropdown"
+		}]
+	},
+	{
+		"id": "103-percent-devilish",
+		"name": "103% Devilish",
+		"description": "Black-Red <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
+		"url": "/products.json",
+		"price": {
+			"aud": 123,
+			"gbp": 123,
+			"eur": 123,
+			"nzd": 123,
+			"sgd": 123,
+			"usd": 123
+		},
+		"image": "https://picsum.photos/400?unique3",
+		"metadata": {
+			"detailedImages": [
+				"https://picsum.photos/1000/500?unique10",
+				"https://picsum.photos/1000/500?unique11",
+				"https://picsum.photos/1000/500?unique12"
+			],
+			"closeupImage": "https://picsum.photos/400?uniquec3",
+			"featuredImageIndex": 3,
+			"productType": "shirt"
+		},
+		"customFields": [{
+			"name": "Size",
+			"options": "S|M|L|XL|2XL|3XL|4XL|5XL",
+			"type": "dropdown"
+		}]
+	}
+]
