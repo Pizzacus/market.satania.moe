@@ -61,9 +61,14 @@
 				class="slide-button"
 				:class="{ selected: currentSlide === i - 1 }"
 				:style="{
+					// There was a 1 frame flicker on the buttons when the slide switched
+					// because the slide would switch but progressToSlide wasn't yet set to zero yet.
+					// The fix is to set the --progress to 0% when progressToSlide is over 1 (100%)
+					// because when progressToSlide is over 1, it means the slide has
+					// already switched and the variable just hasn't been set to 0 yet.
 					'--progress': currentSlide > i - 1
 						? '100%'
-						: currentSlide === i - 1
+						: currentSlide === i - 1 && progressToSlide < 1
 							? Math.round(progressToSlide * 100) + '%'
 							: '0%',
 				}"
@@ -118,10 +123,12 @@ const slideManager = {
 	},
 	resetDelay() {
 		const nextSlide = () => {
-			embla.value?.scrollNext();
 			// Reportedly, that helps with the slideshow getting messed up
 			// when the tab is left inactive for a while
-			window.requestAnimationFrame(() => this.resetDelay());
+			window.requestAnimationFrame(() => {
+				embla.value?.scrollNext();
+				this.resetDelay();
+			});
 		}
 
 		if (this.playing) {
