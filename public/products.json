@@ -20,7 +20,7 @@
 				"https://picsum.photos/1000/500?unique3"
 			],
 			"closeupImage": "https://picsum.photos/400?uniquec0",
-			"featuredImageIndex": 3,
+			"featuredImageIndex": 2,
 			"productType": "hoodie"
 		},
 		"customFields": [{
@@ -50,7 +50,7 @@
 				"https://picsum.photos/1000/500?unique6"
 			],
 			"closeupImage": "https://picsum.photos/400?uniquec1",
-			"featuredImageIndex": 3,
+			"featuredImageIndex": 2,
 			"productType": "shirt"
 		},
 		"customFields": [{
@@ -80,7 +80,7 @@
 				"https://picsum.photos/1000/500?unique9"
 			],
 			"closeupImage": "https://picsum.photos/400?uniquec2",
-			"featuredImageIndex": 3,
+			"featuredImageIndex": 2,
 			"productType": "shirt"
 		},
 		"customFields": [{
@@ -110,7 +110,7 @@
 				"https://picsum.photos/1000/500?unique12"
 			],
 			"closeupImage": "https://picsum.photos/400?uniquec3",
-			"featuredImageIndex": 3,
+			"featuredImageIndex": 2,
 			"productType": "shirt"
 		},
 		"customFields": [{

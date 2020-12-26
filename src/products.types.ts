@@ -1,9 +1,11 @@
+import { Currency } from "./state";
+
 export interface Product {
 	// based on SnipCart's ProductDefinition
 	// https://docs.snipcart.com/v3/sdk/reference#core-models-ProductDefinition
 	id: string;
 	name: string;
-	price: Record<string, number>;
+	price: Record<Currency, number>;
 	url: string;
 	description: string;
 	image: string;

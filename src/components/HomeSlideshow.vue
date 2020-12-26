@@ -3,21 +3,23 @@
 		<div class="embla__container" @mouseover="slideManager.stop()" @mouseout="slideManager.start()">
 			<div
 				class="embla__slide"
-				v-for="slide in slides"
-				key="slide.id"
+				v-for="product in products"
+				:key="product.id"
 				@click.left="handleSlideClick"
 			>
 				<div class="inner-slide" :style="{
-					'--image': slide.background,
+					'--image': `url(${ getFeaturedImage(product) })`,
 				}">
 					<div class="slide-info">
 						<div class="product-name">
-							<h1>{{ slide.title }}</h1>
-							<p v-html="slide.description" />
+							<h1>{{ product.name }}</h1>
+							<p v-html="product.description" />
 						</div>
 
 						<div class="product-actions">
-							<div class="product-price">{{ slide.price }}</div>
+							<div class="product-price">
+								{{ formatPrice(product.price, state.currency) }}
+							</div>
 
 							<button :class="buttons.greenButton">
 								<img
@@ -72,10 +74,24 @@
 </template>
 
 <script setup lang="ts">
-import { defineComponent, onMounted, ref, watch, shallowRef, onUnmounted } from "vue";
+import { onMounted, ref, watch, shallowRef, onUnmounted, inject } from "vue";
 import buttons from "../styles/buttons.module.css";
 import type { Ref } from "vue";
 import EmblaCarousel from "embla-carousel";
+import formatPrice from "../utils/format-price";
+import type { Product } from "../products.types";
+import stateKey from "../state";
+const state = inject(stateKey);
+
+if (!state) {
+	throw new TypeError("State not defined.");
+}
+
+import products from "../../public/products.json";
+
+function getFeaturedImage(product: Product) {
+	return product.metadata.detailedImages[product.metadata.featuredImageIndex];
+}
 
 const emblaNode: Ref<null | HTMLDivElement> = ref(null);
 const embla: Ref<null | ReturnType<typeof EmblaCarousel>> = shallowRef(null);
@@ -87,37 +103,6 @@ interface SlideEntry {
 	description: string;
 	price: string;
 }
-
-const slides: Ref<SlideEntry[]> = ref([
-	{
-		id: "test-item-1",
-		background: "url(https://picsum.photos/1000/500?unique1)",
-		title: "100% devilish",
-		description: "Black <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
-		price: "US $24",
-	},
-	{
-		id: "test-item-2",
-		background: "url(https://picsum.photos/1000/500?unique2)",
-		title: "100% devilish",
-		description: "Black <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
-		price: "US $24",
-	},
-	{
-		id: "test-item-3",
-		background: "url(https://picsum.photos/1000/500?unique3)",
-		title: "100% devilish",
-		description: "Black <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
-		price: "US $24",
-	},
-	{
-		id: "test-item-4",
-		background: "url(https://picsum.photos/1000/500?unique4)",
-		title: "100% devilish",
-		description: "Black <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
-		price: "US $24",
-	},
-]);
 
 const currentSlide: Ref<number> = ref(0);
 const totalSlides: Ref<number> = ref(0);
@@ -178,7 +163,7 @@ const slideManager = {
 	}
 }
 
-const progressToSlide: Ref<Number> = ref(0);
+const progressToSlide: Ref<number> = ref(0);
 
 window.requestAnimationFrame(function loop () {
 	progressToSlide.value = slideManager.progressToSlide();
@@ -315,7 +300,7 @@ onMounted(() => {
 	}
 });
 
-watch(slides, () => {
+watch(products, () => {
 	embla.value?.reInit();
 });
 </script>
