@@ -127,7 +127,6 @@ const slideManager = {
 	resetDelay() {
 		const nextSlide = () => {
 			embla.value?.scrollNext();
-			console.log("next!");
 			this._clearTimeout();
 			this.resetDelay();
 		}
@@ -230,7 +229,6 @@ onMounted(() => {
 		embla.value.on("reInit", handleInit);
 
 		embla.value.on("select", () => {
-			console.log("hello my select");
 			slideManager.resetDelay();
 			if (embla.value) {
 				// This code is meant to help with accidentally strong flicks,
