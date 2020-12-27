@@ -14,6 +14,7 @@ export type CurrencyString = keyof typeof CurrencyEnum;
 export interface GlobalState {
 	currency: CurrencyString;
 	country: string;
+	ipCountry: string | null;
 };
 
 const globalStateKey: InjectionKey<GlobalState> = Symbol("GlobalState");
