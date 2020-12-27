@@ -130,8 +130,10 @@ const slideManager = {
 			// Reportedly, that helps with the slideshow getting messed up
 			// when the tab is left inactive for a while
 			window.requestAnimationFrame(() => {
-				embla.value?.scrollNext();
-				this.resetDelay();
+				if (this.playing) {
+					embla.value?.scrollNext();
+					this.resetDelay();
+				}
 			});
 		}
 
@@ -168,9 +170,9 @@ const slideManager = {
 
 const progressToSlide: Ref<number> = ref(0);
 
-window.requestAnimationFrame(function loop () {
+let loopFrameRequest: number = window.requestAnimationFrame(function loop () {
 	progressToSlide.value = slideManager.progressToSlide();
-	window.requestAnimationFrame(loop);
+	loopFrameRequest = window.requestAnimationFrame(loop);
 });
 
 function visibilityListener() {
@@ -187,6 +189,7 @@ onUnmounted(() => {
 	slideManager.stop();
 	document.removeEventListener("visibilitychange", visibilityListener);
 	embla.value?.destroy();
+	window.cancelAnimationFrame(loopFrameRequest);
 });
 
 function handleSlideClick(event: MouseEvent) {
