@@ -56,7 +56,7 @@ if (storageAvailable()) {
         if (data.ipCountry !== null) {
             window.localStorage.setItem(
                 "ipCountryOverwritten",
-                data.country === data.ipCountry
+                data.country !== data.ipCountry
                     ? "true"
                     : "false"
             );
