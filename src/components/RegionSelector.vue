@@ -5,7 +5,12 @@
 			
 			<p>
 				<label for="country-select">Ship to</label>
-				<select name="country" id="country-select" v-model="state.country">
+				<select
+					name="country"
+					id="country-select"
+					v-model="state.country"
+					@change="state.currency = getCurrency(state.country)"
+				>
 					<option v-for="country in sortedCountries" :value="country.id.toLowerCase()">
 						{{ country.name }}
 					</option>
@@ -33,6 +38,7 @@
 import { inject } from "vue";
 import stateKey from "../state";
 import { countries } from "countries-list";
+import getCurrency from "../utils/get-currency";
 
 const sortedCountries = Object.entries(countries)
 	.map(([id, country]) => ({
