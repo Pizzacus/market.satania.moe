@@ -7,9 +7,13 @@
 				:key="product.id"
 				@click.left="handleSlideClick"
 			>
-				<div class="inner-slide" :style="{
-					'--image': `url(${ getFeaturedImage(product) })`,
-				}">
+				<a
+					:href="'/product/' + product.id"
+					class="inner-slide"
+					:style="{
+						'--image': `url(${ getFeaturedImage(product) })`,
+					}"
+				>
 					<div class="slide-info">
 						<div class="product-name">
 							<h1>{{ product.name }}</h1>
@@ -32,7 +36,7 @@
 							</button>
 						</div>
 					</div>
-				</div>
+				</a>
 			</div>
 		</div>
 
@@ -328,6 +332,7 @@ onMounted(() => {
 }
 
 .inner-slide {
+	display: inline-block;
 	width: 100%;
 	max-width: 1000px;
 	height: 500px;
