@@ -2,7 +2,7 @@
 	{
 		"id": "100-percent-devilish",
 		"name": "100% Devilish",
-		"description": "Black <b>Hoodie</b><br/>Made by <b>Deesco#1939</b>",
+		"description": "Black Hoodie\nMade by <b>Deesco#1939</b>",
 		"url": "/products.json",
 		"price": {
 			"aud": 12.3,
@@ -14,6 +14,7 @@
 		},
 		"image": "https://picsum.photos/400?unique0",
 		"metadata": {
+			"htmlDescription": "Black <b>Hoodie</b><br/>Made by <b>Deesco#1939</b>",
 			"detailedImages": [
 				"https://picsum.photos/1000/500?unique1",
 				"https://picsum.photos/1000/500?unique2",
@@ -32,7 +33,7 @@
 	{
 		"id": "101-percent-devilish",
 		"name": "101% Devilish",
-		"description": "Black <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
+		"description": "Black T-shirt\nMade by <b>Deesco#1939</b>",
 		"url": "/products.json",
 		"price": {
 			"aud": 123,
@@ -44,6 +45,7 @@
 		},
 		"image": "https://picsum.photos/400?unique1",
 		"metadata": {
+			"htmlDescription": "Black <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
 			"detailedImages": [
 				"https://picsum.photos/1000/500?unique4",
 				"https://picsum.photos/1000/500?unique5",
@@ -62,7 +64,7 @@
 	{
 		"id": "102-percent-devilish",
 		"name": "102% Devilish",
-		"description": "Black heather <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
+		"description": "Black heather T-shirt\nMade by <b>Deesco#1939</b>",
 		"url": "/products.json",
 		"price": {
 			"aud": 1.23,
@@ -74,6 +76,7 @@
 		},
 		"image": "https://picsum.photos/400?unique2",
 		"metadata": {
+			"htmlDescription": "Black heather <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
 			"detailedImages": [
 				"https://picsum.photos/1000/500?unique7",
 				"https://picsum.photos/1000/500?unique8",
@@ -92,7 +95,7 @@
 	{
 		"id": "103-percent-devilish",
 		"name": "103% Devilish",
-		"description": "Black-Red <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
+		"description": "Black-Red T-shirt\nMade by <b>Deesco#1939</b>",
 		"url": "/products.json",
 		"price": {
 			"aud": 123,
@@ -104,6 +107,7 @@
 		},
 		"image": "https://picsum.photos/400?unique3",
 		"metadata": {
+			"htmlDescription": "Black-Red <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
 			"detailedImages": [
 				"https://picsum.photos/1000/500?unique10",
 				"https://picsum.photos/1000/500?unique11",
