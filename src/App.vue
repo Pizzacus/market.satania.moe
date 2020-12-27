@@ -46,7 +46,7 @@ if (storageAvailable()) {
     }
 
     if (storedIpCountryOverwritten !== null) {
-        ipCountryOverwritten = Boolean(storedIpCountryOverwritten);
+        ipCountryOverwritten = storedIpCountryOverwritten === "true";
     }
 
     watch(data, () => {
