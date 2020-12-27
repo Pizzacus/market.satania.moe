@@ -2,7 +2,7 @@
 	{
 		"id": "100-percent-devilish",
 		"name": "100% Devilish",
-		"description": "Black Hoodie\nMade by <b>Deesco#1939</b>",
+		"description": "Black Hoodie | Made by Deesco#1939",
 		"url": "/products.json",
 		"price": {
 			"aud": 12.3,
@@ -33,7 +33,7 @@
 	{
 		"id": "101-percent-devilish",
 		"name": "101% Devilish",
-		"description": "Black T-shirt\nMade by <b>Deesco#1939</b>",
+		"description": "Black T-shirt | Made by Deesco#1939",
 		"url": "/products.json",
 		"price": {
 			"aud": 123,
@@ -64,7 +64,7 @@
 	{
 		"id": "102-percent-devilish",
 		"name": "102% Devilish",
-		"description": "Black heather T-shirt\nMade by <b>Deesco#1939</b>",
+		"description": "Black heather T-shirt | Made by Deesco#1939",
 		"url": "/products.json",
 		"price": {
 			"aud": 1.23,
@@ -95,7 +95,7 @@
 	{
 		"id": "103-percent-devilish",
 		"name": "103% Devilish",
-		"description": "Black-Red T-shirt\nMade by <b>Deesco#1939</b>",
+		"description": "Black-Red T-shirt | Made by Deesco#1939",
 		"url": "/products.json",
 		"price": {
 			"aud": 123,
