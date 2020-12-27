@@ -298,10 +298,6 @@ onMounted(() => {
 		});
 	}
 });
-
-watch(products, () => {
-	embla.value?.reInit();
-});
 </script>
 
 <style scoped>
