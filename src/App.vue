@@ -11,7 +11,7 @@ import { provide, reactive } from "vue";
 import TopBar from "./components/TopBar.vue";
 import stateKey from "./state";
 import type { GlobalState } from "./state";
-import getCountry from "./get-country";
+import getCountry from "./utils/get-country";
 
 // This state is shared by the entire app
 // this is simpler than using Vuex it saves me time pls understand
