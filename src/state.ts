@@ -1,11 +1,20 @@
 import { InjectionKey } from "vue";
 
-export type Currency = "aud" | "gbp" | "eur" | "nzd" | "sgd" | "usd";
+export enum CurrencyEnum {
+	aud,
+	gbp,
+	eur,
+	nzd,
+	sgd,
+	usd,
+};
+
+export type CurrencyString = keyof typeof CurrencyEnum;
 
 export interface GlobalState {
-	currency: Currency;
+	currency: CurrencyString;
 	country: string;
-}
+};
 
 const globalStateKey: InjectionKey<GlobalState> = Symbol("GlobalState");
 export default globalStateKey;

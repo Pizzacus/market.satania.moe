@@ -1,11 +1,11 @@
-import { Currency } from "./state";
+import { CurrencyString } from "./state";
 
 export interface Product {
 	// based on SnipCart's ProductDefinition
 	// https://docs.snipcart.com/v3/sdk/reference#core-models-ProductDefinition
 	id: string;
 	name: string;
-	price: Record<Currency, number>;
+	price: Record<CurrencyString, number>;
 	url: string;
 	description: string;
 	image: string;

@@ -1,4 +1,4 @@
-import { Currency } from "../state";
+import { CurrencyString } from "../state";
 
 const DOLLARS_CODES = {
 	aud: "AU",
@@ -7,12 +7,12 @@ const DOLLARS_CODES = {
 	usd: "US",
 };
 
-const SYMBOLS: Record<Exclude<Currency, keyof typeof DOLLARS_CODES>, string> = {
+const SYMBOLS: Record<Exclude<CurrencyString, keyof typeof DOLLARS_CODES>, string> = {
 	eur: "€",
 	gbp: "£",
 }
 
-export default function formatPrice(value: number | Record<Currency, number>, currency: Currency): string {
+export default function formatPrice(value: number | Record<CurrencyString, number>, currency: CurrencyString): string {
 	let strValue: string;
 
 	if (typeof value !== "number") {
