@@ -1,15 +1,17 @@
 <template>
     <top-bar />
 
+    <cart-button />
+
     <main>
         <router-view />
     </main>
 </template>
 
 <script setup lang="ts">
-import { provide, reactive, watch, ref } from "vue";
-import type { Ref } from "vue";
+import { provide, reactive, watch } from "vue";
 import TopBar from "./components/TopBar.vue";
+import CartButton from "./components/CartButton.vue";
 import stateKey, { CurrencyEnum } from "./state";
 import type { GlobalState } from "./state";
 import getIpCountry from "./utils/get-country";

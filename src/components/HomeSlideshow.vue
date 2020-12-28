@@ -25,15 +25,7 @@
 								{{ formatPrice(product.price, state.currency) }}
 							</div>
 
-							<button :class="buttons.greenButton">
-								<img
-									src="/assets/shopping-cart.svg"
-									alt=""
-									role="presentation"
-									class="add-to-cart-icon"
-								/>
-								Add to cart
-							</button>
+							<buy-button :product="product" />
 						</div>
 					</div>
 				</a>
@@ -90,6 +82,7 @@ import EmblaCarousel from "embla-carousel";
 import formatPrice from "../utils/format-price";
 import type { Product } from "../products.types";
 import stateKey from "../state";
+import BuyButton from "./BuyButton.vue";
 const state = inject(stateKey);
 
 if (!state) {
@@ -392,13 +385,6 @@ onMounted(() => {
 	margin-right: 30px;
 }
 
-.add-to-cart-icon {
-	width: 32px;
-	height: 32px;
-	margin-right: 12px;
-	filter: var(--very-small-shadow-filter);
-}
-
 .product-actions {
 	display: flex;
 }
@@ -545,12 +531,6 @@ onMounted(() => {
 
 	.slide-controls {
 		display: none;
-	}
-
-	.add-to-cart-icon {
-		width: 24px;
-		height: 24px;
-		margin-right: 8px;
 	}
 
 	.mobile-slide-nav {
