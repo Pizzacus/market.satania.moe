@@ -12,6 +12,7 @@ const routes: Array<RouteRecordRaw> = [
 		path: "/product/:id",
 		name: "Product",
 		component: Product,
+		props: true,
 	},
 ];
 
