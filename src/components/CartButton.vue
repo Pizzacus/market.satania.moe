@@ -8,7 +8,7 @@
 		{{ itemCount.toLocaleString() }}
 	</button>
 
-	<div class="dark-cart-background" :hidden="!isCartDisplayed" />
+	<div class="dark-cart-background" />
 </template>
 
 <script setup lang="ts">
@@ -18,26 +18,12 @@ import snipcartReady from "../utils/snipcart-ready";
 declare var Snipcart: any;
 
 const itemCount = ref(0);
-const isCartDisplayed = ref(false);
 
 const snipcartNode = document.getElementById("snipcart") as HTMLDivElement;
 
 if (!snipcartNode) {
 	throw new Error("Couldn't find the Snipcart node");
 }
-
-// I couldn't find an interface to know if the Snipcart side modal is displayed
-let loopFrameRequest: number = window.requestAnimationFrame(function loop () {
-	isCartDisplayed.value = [...snipcartNode.children].some(elem =>
-		elem.classList.contains("snipcart-cart-summary--edit") && 
-		elem.classList.contains("snipcart-modal__container")
-	);
-	loopFrameRequest = window.requestAnimationFrame(loop);
-});
-
-onUnmounted(() => {
-	window.cancelAnimationFrame(loopFrameRequest);
-})
 
 let unsubscribeFromAdding: null | (() => void) = null;
 let unsubscribeFromAdded: null | (() => void) = null;
@@ -119,7 +105,12 @@ img {
 	bottom: 0;
 	left: 0;
 	right: 0;
-	background: #0004;
+	background: #0008;
 	z-index: 9;
+	display: none;
+}
+
+html.snipcart-sidecart--opened .dark-cart-background {
+	display: block;
 }
 </style>
