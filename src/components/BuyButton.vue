@@ -1,19 +1,4 @@
 <template>
-	<!-- Supporting more than one custom field would be pain -->
-	<!--
-
-		class="snipcart-add-item"
-		:data-item-id="props.product.id"
-		:data-item-name="props.product.name"
-		:data-item-price="JSON.stringify(props.product.price)"
-		data-item-url="/products.json"
-		:data-item-description="props.product.description"
-		:data-item-image="props.product.image"
-		:data-item-metadata="JSON.stringify(props.product.metadata)"
-		:data-item-custom1-name="props.product.customFields[0].name"
-		:data-item-custom1-options="props.product.customFields[0].options"
-		:data-item-custom1-type="props.product.customFields[0].type"
-		-->
 	<button :class="buttons.greenButton" @click.left.prevent="onclick">
 		<template v-if="inCart">
 			<img
