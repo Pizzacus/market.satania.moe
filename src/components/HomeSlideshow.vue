@@ -111,13 +111,15 @@ const embla: Ref<null | ReturnType<typeof EmblaCarousel>> = shallowRef(null);
 const currentSlide: Ref<number> = ref(0);
 const totalSlides: Ref<number> = ref(0);
 
+let mounted = false;
+
 const slideManager = {
 	playing: false,
 	timeout: null as null | number,
 	slideTime: null as null | number,
 	delay: 5000,
 	start() {
-		if (!this.playing) {
+		if (!this.playing && mounted) {
 			this.playing = true;
 			this.resetDelay();
 		}
@@ -140,7 +142,7 @@ const slideManager = {
 			});
 		}
 
-		if (this.playing) {
+		if (this.playing && mounted) {
 			this._clearTimeout();
 			this.timeout = window.setTimeout(nextSlide.bind(this), this.delay);
 			this.slideTime = performance.now() + this.delay;
@@ -173,11 +175,6 @@ const slideManager = {
 
 const progressToSlide: Ref<number> = ref(0);
 
-let loopFrameRequest: number = window.requestAnimationFrame(function loop () {
-	progressToSlide.value = slideManager.progressToSlide();
-	loopFrameRequest = window.requestAnimationFrame(loop);
-});
-
 function visibilityListener() {
 	if (document.hidden) {
 		slideManager.stop();
@@ -186,14 +183,7 @@ function visibilityListener() {
 	}
 }
 
-document.addEventListener("visibilitychange", visibilityListener);
-
-onUnmounted(() => {
-	slideManager.stop();
-	document.removeEventListener("visibilitychange", visibilityListener);
-	embla.value?.destroy();
-	window.cancelAnimationFrame(loopFrameRequest);
-});
+let loopFrameRequest: number;
 
 function handleSlideClick(event: MouseEvent) {
 	const slide = event.currentTarget as HTMLDivElement;
@@ -223,7 +213,16 @@ function absoluteScrollTo(slideNum : number) {
 }
 
 onMounted(() => {
+	mounted = true;
+
 	if (emblaNode.value) {
+		document.addEventListener("visibilitychange", visibilityListener);
+
+		 loopFrameRequest = window.requestAnimationFrame(function loop () {
+			progressToSlide.value = slideManager.progressToSlide();
+			loopFrameRequest = window.requestAnimationFrame(loop);
+		});
+
 		embla.value = EmblaCarousel(emblaNode.value, {
 			loop: true,
 			inViewThreshold: 1,
@@ -307,6 +306,13 @@ onMounted(() => {
 			}
 		});
 	}
+});
+
+onUnmounted(() => {
+	slideManager.stop();
+	document.removeEventListener("visibilitychange", visibilityListener);
+	embla.value?.destroy();
+	window.cancelAnimationFrame(loopFrameRequest);
 });
 </script>
 
