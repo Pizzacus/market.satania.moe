@@ -17,7 +17,7 @@
 					<div class="slide-info">
 						<div class="product-name">
 							<h1>{{ product.name }}</h1>
-							<p v-html="product.description" />
+							<p v-html="product.metadata.htmlDescription" />
 						</div>
 
 						<div class="product-actions">

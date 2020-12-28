@@ -22,7 +22,7 @@
 				</div>
 			</div>
 
-			<p v-html="props.product.description" />
+			<p v-html="props.product.metadata.htmlDescription" />
 		</div>
 	</a>
 </template>
@@ -107,7 +107,7 @@ const props = defineProps({
 	left: 50%;
 	transform: translate(-50%, -50%) scale(0.95);
 	transition: opacity 0.2s ease-out, transform 0.1s ease-out;
-	z-index: 6;
+	z-index: 1;
 	visibility: hidden;
 	opacity: 0;
 }

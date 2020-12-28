@@ -20,7 +20,7 @@ header {
 	position: absolute;
 	left: 8px;
 	top: 8px;
-	z-index: 666;
+	z-index: 8;
 	filter: var(--large-shadow-filter);
 }
 

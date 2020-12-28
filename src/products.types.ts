@@ -9,8 +9,10 @@ export interface Product {
 	url: string;
 	description: string;
 	image: string;
+	shippable: boolean;
 	metadata: {
 		// We can store any data we want here
+		htmlDescription: string;
 		detailedImages: string[];
 		featuredImageIndex: number;
 		productType: "hoodie" | "shirt";
