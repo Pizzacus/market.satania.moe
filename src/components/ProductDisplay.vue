@@ -1,5 +1,5 @@
 <template>
-	<a :href="'/product/' + props.product.id" class="product">
+	<router-link :to="'/product/' + props.product.id" class="product">
 		<div class="product-image" role="presentation">
 			<img
 				:src="props.product.image"
@@ -24,7 +24,7 @@
 
 			<p v-html="props.product.metadata.htmlDescription" />
 		</div>
-	</a>
+	</router-link>
 </template>
 
 <script setup lang="ts">

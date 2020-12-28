@@ -1,14 +1,18 @@
 <template>
 	<div class="embla" ref="emblaNode">
-		<div class="embla__container" @mouseover="slideManager.stop()" @mouseout="slideManager.start()">
+		<div class="embla__container"
+			@mouseover="slideManager.stop()"
+			@mouseout="slideManager.start()"
+			@click.capture="preventClickWhenDragging"
+		>
 			<div
 				class="embla__slide"
 				v-for="product in products"
 				:key="product.id"
 				@click.left="handleSlideClick"
 			>
-				<a
-					:href="'/product/' + product.id"
+				<router-link
+					:to="'/product/' + product.id"
 					class="inner-slide"
 					:style="{
 						'--image': `url(${ getFeaturedImage(product) })`,
@@ -28,7 +32,7 @@
 							<buy-button :product="product" />
 						</div>
 					</div>
-				</a>
+				</router-link>
 			</div>
 		</div>
 
@@ -75,8 +79,7 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref, watch, shallowRef, onUnmounted, inject } from "vue";
-import buttons from "../styles/buttons.module.css";
+import { onMounted, ref, shallowRef, onUnmounted, inject } from "vue";
 import type { Ref } from "vue";
 import EmblaCarousel from "embla-carousel";
 import formatPrice from "../utils/format-price";
@@ -93,6 +96,13 @@ import products from "../../public/products.json";
 
 function getFeaturedImage(product: Product) {
 	return product.metadata.detailedImages[product.metadata.featuredImageIndex];
+}
+
+function preventClickWhenDragging(event: MouseEvent) {
+	if (!embla.value?.clickAllowed()) {
+		event.preventDefault();
+		event.stopPropagation();
+	}
 }
 
 const emblaNode: Ref<null | HTMLDivElement> = ref(null);
