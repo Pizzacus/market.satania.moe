@@ -358,6 +358,7 @@ onMounted(() => {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	filter: var(--large-shadow-filter);
 }
 
 .product-name {
