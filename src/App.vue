@@ -6,6 +6,13 @@
 	<main>
 		<router-view />
 	</main>
+
+	<footer>
+		<a href="https://github.com/Pizzacus/market.satania.moe" target="blank" rel="noopener" class="github-notice">
+			<img class="github-logo" src="/assets/github.svg" alt="" role="presentation">
+			<div>This website is open-source!<br/>Check the code out on GitHub.</div>
+		</a>
+	</footer>
 </template>
 
 <script setup lang="ts">
@@ -88,3 +95,27 @@ snipcartReady().then(() => {
 
 provide(stateKey, data);
 </script>
+
+<style scoped>
+footer {
+	text-align: center;
+}
+.github-notice {
+	background: var(--gray);
+	border-radius: 10000px;
+	display: inline-flex;
+	margin-top: 32px;
+	padding: 16px;
+	font-size: 18px;
+	font-weight: 600;
+	line-height: 1.2;
+	align-items: center;
+	color: inherit;
+	text-decoration: none;
+}
+
+.github-logo {
+	width: 48px;
+	margin-right: 16px;
+}
+</style>
