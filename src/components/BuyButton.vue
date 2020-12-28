@@ -57,6 +57,10 @@ const props = defineProps({
 		type: Object as PropType<Product>,
 		required: true,
 	},
+	customFieldValues: {
+		type: Array as PropType<string[]>,
+		default: [],
+	}
 });
 
 const inCart: Ref<boolean> = ref(false);
@@ -115,7 +119,14 @@ async function onclick() {
 	await ready;
 
 	if (!inCart.value) {
-		await Snipcart.api.cart.items.add(props.product);
+		// Sets the custom field values
+		await Snipcart.api.cart.items.add({
+			...props.product,
+			customFields: props.product.customFields.map((customField, i) => ({
+				...customField,
+				value: props.customFieldValues[i],
+			}))
+		});
 	}
 
 	// No API to open the side modal, improvising

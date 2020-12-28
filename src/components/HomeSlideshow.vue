@@ -29,7 +29,7 @@
 								{{ formatPrice(product.price, state.currency) }}
 							</div>
 
-							<buy-button :product="product" />
+							<buy-button :product="product" :custom-field-values="['M']" />
 						</div>
 					</div>
 				</router-link>
