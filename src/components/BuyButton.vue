@@ -1,31 +1,47 @@
 <template>
-	<button
-		:class="buttons.greenButton"
-		:disabled="props.disabled && !inCart"
-		@click.left.prevent="onclick"
-	>
-		<template v-if="inCart">
-			<img
-				src="/assets/in-cart.svg"
-				alt=""
-				role="presentation"
-				class="add-to-cart-icon"
-			/>
-			In cart!
-		</template>
-		<template v-else-if="!disabled">
-			<img
-				src="/assets/shopping-cart-add.svg"
-				alt=""
-				role="presentation"
-				class="add-to-cart-icon"
-			/>
-			Add to cart
-		</template>
-		<template v-else>
-			Select an option
-		</template>
-	</button>
+	<div class="button-wrapper">
+		<button
+			:class="buttons.greenButton"
+			:disabled="props.disabled && !inCart"
+			@click.left.prevent="onclick"
+		>
+			<template v-if="inCart">
+				<img
+					src="/assets/in-cart.svg"
+					alt=""
+					role="presentation"
+					class="add-to-cart-icon"
+				/>
+				In cart!
+			</template>
+			<template v-else-if="!disabled">
+				<img
+					src="/assets/shopping-cart-add.svg"
+					alt=""
+					role="presentation"
+					class="add-to-cart-icon"
+				/>
+				Add to cart
+			</template>
+			<template v-else>
+				Select an option
+			</template>
+		</button>
+
+		<a
+			v-if="inCart"
+			class="add-another"
+			:class="{ disabled: props.disabled }"
+			@click.left.prevent="onclickanother"
+		>
+			<template v-if="disabled">
+				Select an option to add another one
+			</template>
+			<template v-else>
+				Add another one to cart →
+			</template>
+		</a>
+	</div>
 </template>
 
 <script setup lang="ts">
@@ -119,27 +135,60 @@ async function onclick() {
 	await ready;
 
 	if (!inCart.value && !props.disabled) {
-		// Sets the custom field values
-		await Snipcart.api.cart.items.add({
-			...props.product,
-			customFields: props.product.customFields.map((customField, i) => ({
-				...customField,
-				value: props.customFieldValues[i],
-			}))
-		});
+		await addToCart();
 	}
 
-	// No API to open the side modal, improvising
-	// And calling directly makes it close immediately because of the click
-	window.requestAnimationFrame(
-		() => document.getElementById("cart-button")?.click()
-	);
+	await openCart();
 
 	clickedOnce = false;
+}
+
+async function onclickanother() {
+	if (clickedOnce) {
+		return;
+	}
+
+	if (props.disabled) {
+		return;
+	}
+
+	clickedOnce = true;
+
+	await ready;
+	await addToCart();
+	await openCart();
+
+	clickedOnce = false;
+}
+
+async function addToCart(): Promise<void> {
+	// Sets the custom field values
+	return Snipcart.api.cart.items.add({
+		...props.product,
+		customFields: props.product.customFields.map((customField, i) => ({
+			...customField,
+			value: props.customFieldValues[i],
+		}))
+	});
+}
+
+function openCart(): Promise<void> {
+	return new Promise((resolve) => {
+		// No API to open the side modal, improvising
+		// And calling directly makes it close immediately because of the click
+		window.requestAnimationFrame(() => {
+			document.getElementById("cart-button")?.click();
+			resolve();
+		});
+	});
 }
 </script>
 
 <style scoped>
+button {
+	width: 100%;
+}
+
 .add-to-cart-icon {
 	width: 32px;
 	height: 32px;
@@ -153,5 +202,19 @@ async function onclick() {
 		height: 24px;
 		margin-right: 8px;
 	}
+}
+
+.add-another {
+	text-align: center;
+	margin-top: 5px;
+	color: var(--red);
+	font-weight: bold;
+	display: block;
+	cursor: pointer;
+}
+
+.add-another.disabled {
+	cursor: default;
+	opacity: 0.5;
 }
 </style>
