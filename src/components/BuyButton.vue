@@ -1,5 +1,9 @@
 <template>
-	<button :class="buttons.greenButton" @click.left.prevent="onclick">
+	<button
+		:class="buttons.greenButton"
+		:disabled="props.disabled && !inCart"
+		@click.left.prevent="onclick"
+	>
 		<template v-if="inCart">
 			<img
 				src="/assets/in-cart.svg"
@@ -9,7 +13,7 @@
 			/>
 			In cart!
 		</template>
-		<template v-else>
+		<template v-else-if="!disabled">
 			<img
 				src="/assets/shopping-cart-add.svg"
 				alt=""
@@ -17,6 +21,9 @@
 				class="add-to-cart-icon"
 			/>
 			Add to cart
+		</template>
+		<template v-else>
+			Select an option
 		</template>
 	</button>
 </template>
@@ -45,7 +52,11 @@ const props = defineProps({
 	customFieldValues: {
 		type: Array as PropType<string[]>,
 		default: [],
-	}
+	},
+	disabled: {
+		type: Boolean,
+		default: false,
+	},
 });
 
 const inCart: Ref<boolean> = ref(false);
@@ -99,11 +110,15 @@ async function onclick() {
 		return;
 	}
 
+	if (props.disabled && !inCart.value) {
+		return;
+	}
+
 	clickedOnce = true;
 
 	await ready;
 
-	if (!inCart.value) {
+	if (!inCart.value && !props.disabled) {
 		// Sets the custom field values
 		await Snipcart.api.cart.items.add({
 			...props.product,
