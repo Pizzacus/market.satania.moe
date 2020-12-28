@@ -114,15 +114,15 @@ async function onclick() {
 
 	await ready;
 
-	if (inCart.value) {
-		// No API to open the side modal, improvising
-		// And calling directly makes it close immediately because of the click
-		window.requestAnimationFrame(
-			() => document.getElementById("cart-button")?.click()
-		);
-	} else {
+	if (!inCart.value) {
 		await Snipcart.api.cart.items.add(props.product);
 	}
+
+	// No API to open the side modal, improvising
+	// And calling directly makes it close immediately because of the click
+	window.requestAnimationFrame(
+		() => document.getElementById("cart-button")?.click()
+	);
 
 	clickedOnce = false;
 }
