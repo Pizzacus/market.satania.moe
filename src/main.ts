@@ -1,3 +1,17 @@
+/*!
+
+This compiled code includes portions of many open-source libraries, which are
+released under various license with different terms and conditions. Some of
+which require attribution.
+
+You may find those terms and attributions at
+https://github.com/Pizzacus/market.satania.moe/blob/master/LICENSE-THIRD-PARTY
+
+Further copyright notices:
+https://github.com/Pizzacus/market.satania.moe/blob/master/COPYRIGHT
+
+*/
+
 import { createApp } from "vue";
 import App from "./App.vue";
 import router from "./router";

@@ -1,0 +1,34 @@
+Copyright Pizzacus & Contributors 2020
+
+This project, except exceptions listed below, is released under the Apache 2.0
+License, a copy of which is included in the LICENSE file. You may also find it
+at http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+
+--- EXCEPTIONS ---
+
+Those who contributed designs to be used on products have the rights to the
+designs they have contributed, and thus, these are not covered by the APACHE 2.0
+license. Some of those designs may be released under open licenses, or may have
+copyright and attribution notices of their own. Check the product's page for
+such mentions.
+
+An SVG conversion of the GitHub mark is present in /assets/github.svg. GitHub
+have the rights to this mark, and have set terms and conditions to its use. You
+may see those terms at https://github.com/logos.
+
+This project includes various third-party libraries, which are released under
+their own licenses, with different terms and conditions. Many of them also
+require attribution. These terms and attributions can be found through several
+ways:
+	- In the LICENSE-THIRD-PARTY file, distributed with the source code of
+	this project.
+	- In the source of the libraries themselves. You may obtain this source code
+	using a Node.js package manager.
+	- A comment should be present in the compiled output of this project that
+	links to the LICENSE-THIRD-PARTY file on GitHub.
