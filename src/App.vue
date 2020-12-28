@@ -1,11 +1,11 @@
 <template>
-    <top-bar />
+	<top-bar />
 
-    <cart-button />
+	<cart-button />
 
-    <main>
-        <router-view />
-    </main>
+	<main>
+		<router-view />
+	</main>
 </template>
 
 <script setup lang="ts">
@@ -17,13 +17,16 @@ import type { GlobalState } from "./state";
 import getIpCountry from "./utils/get-country";
 import getCurrency from "./utils/get-currency";
 import storageAvailable from "./utils/storage-available";
+import snipcartReady from "./utils/snipcart-ready";
+
+declare var Snipcart: any;
 
 // This state is shared by the entire app
 // this is simpler than using Vuex it saves me time pls understand
 const data: GlobalState = reactive({
-    currency: "usd",
-    country: "us",
-    ipCountry: null,
+	currency: "usd",
+	country: "us",
+	ipCountry: null,
 });
 
 // This variable (later pulled from localStorage) rememebers whether the user
@@ -35,45 +38,53 @@ const data: GlobalState = reactive({
 let ipCountryOverwritten: Boolean = false;
 
 if (storageAvailable()) {
-    const storedCurrency = window.localStorage.getItem("currency");
-    const storedCountry = window.localStorage.getItem("country");
-    const storedIpCountryOverwritten = window.localStorage.getItem("ipCountryOverwritten");
+	const storedCurrency = window.localStorage.getItem("currency");
+	const storedCountry = window.localStorage.getItem("country");
+	const storedIpCountryOverwritten = window.localStorage.getItem("ipCountryOverwritten");
 
-    if (storedCountry !== null) {
-        data.country = storedCountry;
-    }
+	if (storedCountry !== null) {
+		data.country = storedCountry;
+	}
 
-    if (storedCurrency !== null && storedCurrency in CurrencyEnum) {
-        data.currency = storedCurrency as keyof typeof CurrencyEnum;
-    }
+	if (storedCurrency !== null && storedCurrency in CurrencyEnum) {
+		data.currency = storedCurrency as keyof typeof CurrencyEnum;
+	}
 
-    if (storedIpCountryOverwritten !== null) {
-        ipCountryOverwritten = storedIpCountryOverwritten === "true";
-    }
+	if (storedIpCountryOverwritten !== null) {
+		ipCountryOverwritten = storedIpCountryOverwritten === "true";
+	}
 
-    watch(data, () => {
-        window.localStorage.setItem("currency", data.currency);
-        window.localStorage.setItem("country", data.country);
+	watch(data, () => {
+		window.localStorage.setItem("currency", data.currency);
+		window.localStorage.setItem("country", data.country);
 
-        if (data.ipCountry !== null) {
-            window.localStorage.setItem(
-                "ipCountryOverwritten",
-                data.country !== data.ipCountry
-                    ? "true"
-                    : "false"
-            );
-        }
-    });
+		if (typeof Snipcart !== "undefined") {
+			Snipcart.api.session.setCurrency(data.currency);
+		}
+
+		if (data.ipCountry !== null) {
+			window.localStorage.setItem(
+				"ipCountryOverwritten",
+				data.country !== data.ipCountry
+					? "true"
+					: "false"
+			);
+		}
+	});
 }
 
 getIpCountry().then((country) => {
-    data.ipCountry = country;
+	data.ipCountry = country;
 
-    if (country && !ipCountryOverwritten) {
-        data.country = country;
-        data.currency = getCurrency(country);
-    }
+	if (country && !ipCountryOverwritten) {
+		data.country = country;
+		data.currency = getCurrency(country);
+	}
 });
+
+snipcartReady().then(() => {
+	Snipcart.api.session.setCurrency(data.currency);
+})
 
 provide(stateKey, data);
 </script>
