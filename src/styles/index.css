@@ -47,3 +47,8 @@ h6 {
 	font-family: var(--asap-font), var(--source-sans-font), var(--default-font);
 	font-weight: 600;
 }
+
+.snipcart-cart-summary-side .snipcart-cart__content .snipcart-item-list {
+	/* Snipcart uses overflow: overlay, and that only works in webkit, making the sidebar unscrollable on Firefox! */
+	overflow: auto !important;
+}
