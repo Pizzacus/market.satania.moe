@@ -2,8 +2,14 @@
 	<div class="region-selector">
 		<div class="region-selector-content">
 			<img class="pin-icon" src="/assets/map-pin.svg" alt="" role="presentation" />
+
+			<!--
+				These hidden blocks were from back when I thought I'd let people
+				select their country to get shipping rates previews, but then
+				realised it would be too hard to implement.
+			-->
 			
-			<p>
+			<p hidden>
 				<label for="country-select">Ship to</label>
 				<select
 					name="country"
@@ -17,7 +23,7 @@
 				</select>
 			</p>
 
-			<div class="separator"/>
+			<div class="separator" hidden />
 
 			<p>
 				<label for="currency-select">Pay with</label>
