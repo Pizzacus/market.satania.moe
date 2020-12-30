@@ -13,9 +13,12 @@
 				</p>
 					
 				<p>
-					This year, we're featuring designs made by various members
-					of the community. Profits&nbsp;will be shared of course, to
-					support these outstanding people!
+					This year, we've invited members of the community to
+					contribute their designs and get a share of the revenues
+					made from the event!
+					
+					Thank you so much to everyone who will support the
+					community, and its members, too!
 				</p>
 
 				<div class="products">
