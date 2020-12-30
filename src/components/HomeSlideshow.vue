@@ -5,6 +5,25 @@
 			@mouseout="slideManager.start()"
 			@click.capture="preventClickWhenDragging"
 		>
+			<div class="embla__slide">
+				<div class="inner-slide" :style="{
+						'--image': `url(https://picsum.photos/1000/500?unique100)`,
+					}">
+					<div class="slide-info">
+						<div class="product-name">
+							<h1>Welcome to Satania&nbsp;Market&nbsp;2021!</h1>
+							<p>
+								We're celebrating the new year with a brand new
+								edition of Satania&nbsp;Market.<br />
+								This time, supporting both Satania Dropout and
+								its	members through community-contributed
+								designs!
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+
 			<div
 				class="embla__slide"
 				v-for="product in products"
