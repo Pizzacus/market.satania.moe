@@ -94,37 +94,5 @@
 			"options": "S|M|L|XL|2XL|3XL|4XL|5XL",
 			"type": "dropdown"
 		}]
-	},
-	{
-		"id": "103-percent-devilish",
-		"name": "103% Devilish",
-		"description": "Black-Red T-shirt | Made by Deesco#1939",
-		"url": "/products.json",
-		"shippable": true,
-		"price": {
-			"aud": 123,
-			"gbp": 123,
-			"eur": 123,
-			"nzd": 123,
-			"sgd": 123,
-			"usd": 123
-		},
-		"image": "https://picsum.photos/400?unique3",
-		"metadata": {
-			"htmlDescription": "Black-Red <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
-			"detailedImages": [
-				"https://picsum.photos/1000/500?unique10",
-				"https://picsum.photos/1000/500?unique11",
-				"https://picsum.photos/1000/500?unique12"
-			],
-			"closeupImage": "https://picsum.photos/400?uniquec3",
-			"featuredImageIndex": 2,
-			"productType": "shirt"
-		},
-		"customFields": [{
-			"name": "Size",
-			"options": "S|M|L|XL|2XL|3XL|4XL|5XL",
-			"type": "dropdown"
-		}]
 	}
 ]
