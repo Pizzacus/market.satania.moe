@@ -4,26 +4,26 @@
 		<region-selector />
 
 		<section class="intro">
-				<h1>Exclusive merchandise</h1>
-				<h2>from the <span class="red">Satania Dropout</span> community</h2>
+			<h1>Exclusive merchandise</h1>
+			<h2>from the <span class="red">Satania Dropout</span> community</h2>
 
-				<p>
-					After all the positive feedback we got from our first edition in 2019,
-					Satania Market is back!
-				</p>
-					
-				<p>
-					This year, we've invited members of the community to
-					contribute their designs and get a share of the revenues
-					made from the event!
-					
-					Thank you so much to everyone who will support the
-					community, and these members, too!
-				</p>
+			<p>
+				After all the positive feedback we got from our first edition in 2019,
+				Satania Market is back!
+			</p>
+				
+			<p>
+				This year, we've invited members of the community to
+				contribute their designs and get a share of the revenues
+				made from the event!
+				
+				Thank you so much to everyone who will support the
+				community, and these members, too!
+			</p>
 
-				<div class="products">
-					<product-display v-for="product in products" :product="product" />
-				</div>
+			<div class="products">
+				<product-display v-for="product in products" :product="product" />
+			</div>
 		</section>
 	</div>
 </template>
