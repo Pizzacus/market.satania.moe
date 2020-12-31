@@ -18,7 +18,7 @@
 					made from the event!
 					
 					Thank you so much to everyone who will support the
-					community, and its members, too!
+					community, and these members, too!
 				</p>
 
 				<div class="products">
