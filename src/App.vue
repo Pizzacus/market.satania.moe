@@ -12,6 +12,9 @@
 			<img class="github-logo" src="/assets/github.svg" alt="" role="presentation">
 			<div>This website is open-source!<br/>Check the code out on GitHub.</div>
 		</a>
+
+		<h3>Have any questions? Requests? Issues?</h3>
+		<h4>Tell us in <span class="channel">#satania-market</span> on Satania Dropout!</h4>
 	</footer>
 </template>
 
@@ -117,5 +120,10 @@ footer {
 .github-logo {
 	width: 48px;
 	margin-right: 16px;
+}
+
+.channel {
+	background: rgba(114,137,218,.1);
+	color: #7289da;
 }
 </style>
