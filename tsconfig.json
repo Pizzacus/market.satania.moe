@@ -6,7 +6,8 @@
         "moduleResolution": "node",
         "sourceMap": true,
         "baseUrl": ".",
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "resolveJsonModule": true
     },
     "include": [
         "src/**/*.ts",

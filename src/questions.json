@@ -1,0 +1,59 @@
+[
+	{
+		"title": "Shipping & COVID-19",
+		"content": [
+			{
+				"title": "Do you ship internationally? Are there any countries you don't ship to because of COVID-19?",
+				"content": "We ship internationally! Except for the following countries due to US sanctions: Cuba, Iran, Crimea, Syria, and North Korea.<br/><br/>Currently, COVID-19 is <b>not</b> interrupting shipping anywhere. If this were to change, our checkout system would take it into account automatically. <b>Only orders to addresses we can ship to will be confirmed, so there is no need to worry.</b><br/><br/>If still, somehow, a COVID-19 disruption prevents us from getting your order to you, we will either figure out an alternative transport solution free of charge or refund you."
+			},
+			{
+				"title": "Are there any delays due to COVID-19?",
+				"content": "Delays can happen, check the delivery estimate when you order, we have found that it is quite accurate.<br/><br/>We know waiting around for an order is not a very pleasant experience... so thank you in advance for your patience! If you are anxious, remember that you <b>will</b> get your order in the end, or else we will fully refund it."
+			},
+			{
+				"title": "Is receiving a package safe with COVID-19?",
+				"content": "Yes, packages sent through the postal system present no COVID-19 risk to the recipient, nor the postal workers involved. For more information about COVID-19 and packages, check <a href=\"https://www.ecdc.europa.eu/en/covid-19/facts/q-covid-19/questions-answers-various\" target=\"_blank\" rel=\"noopener\">the FAQ of the European Centre for Disease Prevention and Control</a>, although it targets Europe, it applies to the whole world."
+			},
+
+			{
+				"title": "I've made a mistake with my order, how do I fix it?",
+				"content": "<b>Contact us immediately at praise@satania.moe or DM Pizzacus#2884 on Discord.</b> Remember to mention your order number. When you order, there is a 24 hours delay during which we can be change or cancel the order. Past this delay, we might still be able to change the order, but this isn't guaranteed.<br/><br/>If we can't change the order and you entered the wrong address, the carrier will return it to us, so see the next question about this.<br/><br/>Please verify your info before submitting so this doesn't happen to you!"
+			},
+			{
+				"title": "My package is getting returned, what will happen?",
+				"content": "The carrier may return a package to us if they cannot deliver it (wrong address, COVID-19 issues, and even in some places, because you weren't here to take it).<br/><br/>Once we receive it, we will send it back to you a second time free of charge! If it was returned because you entered the wrong address, we can change it before resending it.<br/><br/>You may only have one free re-ship per package. If the package gets returned after that, you may get another free re-ship if the conditions that led to the return were out of your control.<br/><br/>We will not re-ship for free if the total cost of all the re-shipping goes past US$30."
+			}
+		]
+	},
+	{
+		"title": "Your product",
+		"content": [
+			{
+				"title": "I've received a faulty product, what should I do?",
+				"content": "Our supplier is responsible for ensuring the quality of the products. If your item is misprinted, damaged, or defective, they will provide you with another one free of charge <b>as long as the claim is made within 4 weeks of you receiving the article.</b><br/><br/>Send the following to praise@satania.moe or DM Pizzacus#2884:<br/><ol><li>Order number</li> <li>Name of the defective item and description of the defects</li> <li>A decent picture showing the defects</li></ol>We will forward the issue to the supplier, and they will handle it."
+			},
+			{
+				"title": "What are the conditions to return and refund an item?",
+				"content": "For orders that aren't defective, you may return them if:<br /><ol><li>You received your item less than 4 weeks ago</li> <li>The product is in great conditions</li> <li>You kept the receipt in the package, or the barcode sticker on the product</li></ol>Email praise@satania.moe or DM Pizzacus#2884 to arrange a return and refund."
+			},
+
+			{
+				"title": "How do I wash my products?",
+				"content": "See <a href=\"https://help.printful.com/hc/en-us/articles/360014066579-Care-instructions\" target=\"_blank\" rel=\"noopener\">our supplier's care instructions</a>, in the \"Printed apparel (direct-to-garment)\" section."
+			}
+		]
+	},
+	{
+		"title": "Payments",
+		"content": [
+			{
+				"title": "What payment methods do you accept?",
+				"content": "Payment cards and PayPal. Any common payment card will work, including debit cards, credit cards, and such, from anywhere in the world. Payment cards are convenient for us because they have much lower fees than PayPal, but we understand many people prefer PayPal."
+			},
+			{
+				"title": "Am I billed in the currency I select, or is this just for display?",
+				"content": "You will be billed in the selected currency, this avoids conversion fees from your bank!"
+			}
+		]
+	}
+]

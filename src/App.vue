@@ -104,7 +104,7 @@ footer {
 	background: var(--gray);
 	border-radius: 10000px;
 	display: inline-flex;
-	margin-top: 32px;
+	margin: 64px 0;
 	padding: 16px;
 	font-size: 18px;
 	font-weight: 600;
