@@ -35,10 +35,16 @@
 							<div class="label-wrapper">
 								<label :for="field.name + '-select'">{{ field.name }}</label>
 
-								<button v-if="field.name.toLowerCase() === 'size'" class="size-info-button">
+								<a
+									v-if="field.name.toLowerCase() === 'size'"
+									:href="sizeChart()"
+									class="size-info-button"
+									target="_blank"
+									rel="noopener"
+								>
 									<img src="/assets/size-info.svg" alt="" role="presentation" />
-									Size guide
-								</button>
+									Size chart
+								</a>
 							</div>
 
 							<select name="size" :id="field.name + '-select'" v-model="customFieldValues[i]">
@@ -127,6 +133,19 @@ if (product == null) {
 }
 
 const customFieldValues: Ref<(undefined | string)[]> = ref(Array(product.customFields.length).fill(undefined));
+
+function sizeChart(): string {
+	if (product == null) {
+		throw new Error("Product not found");
+	}
+	switch (product.metadata.productType) {
+		case "hoodie":
+			return "https://www.bellacanvas.com/spec/3939.pdf";
+
+		case "shirt":
+			return "https://www.bellacanvas.com/spec/3001%20specs.pdf";
+	}
+}
 </script>
 
 <style scoped>
@@ -234,6 +253,9 @@ hr.large-margin {
 	background: none;
 	border: none;
 	border-radius: 3px;
+	display: inline-block;
+	color: inherit;
+	text-decoration: none;
 }
 
 .size-info-button:hover {
