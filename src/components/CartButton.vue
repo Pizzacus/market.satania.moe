@@ -87,6 +87,7 @@ button {
 
 button.hidden {
 	transform: translate(100%, 0);
+	box-shadow: none;
 }
 
 button:hover {
