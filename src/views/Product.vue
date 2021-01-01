@@ -60,41 +60,14 @@
 					/>
 				</div>
 
+				<div v-if="product.metadata.notice" v-html="product.metadata.notice" class="notice" />
 
 				<div class="feature-list">
-					<hr />
-
-					<div class="feature">
-						<img src="/assets/package.svg" alt="" class="feature-img" role="presentation" />
-
-						<div class="feature-text price-feature">
-							<div class="label">
-								<b>Standard shipping</b>
-								<!-- TODO: Arriving by -->
-							</div>
-
-							<div class="feature-price">
-								US $4.39
-							</div>
-						</div>
-					</div>
-
-					<div class="feature feature-info">
-						<img src="/assets/info.svg" alt="" class="feature-img" role="presentation" />
-
-						<div class="feature-text">
-							Shipping costs are much lower when<br />
-							there are multiple items in your cart.
-						</div>
-					</div>
-
-					<hr />
-
 					<div class="feature">
 						<img src="/assets/shipping.svg" alt="" class="feature-img" role="presentation" />
 
 						<div class="feature-text">
-							Ship to <b>France</b>, pay in <b>US Dollars</b>
+							Ship internationally, pay in <b>US Dollars</b>
 						</div>
 					</div>
 
@@ -110,7 +83,7 @@
 						<img src="/assets/return.svg" alt="" class="feature-img" role="presentation" />
 
 						<div class="feature-text">
-							<b>Full refund</b> if returned within 30 days
+							<b>Full refund</b> if returned within 4 weeks
 						</div>
 					</div>
 
@@ -305,5 +278,14 @@ hr.large-margin {
 	background: #F5F5F5;
 	font-size: 12px;
 	line-height: 1.25;
+}
+
+.notice {
+	background: #ea03;
+	padding: 10px;
+	border: #ea0 solid 3px;
+	font-size: 14px;
+	margin-bottom: 20px;
+	border-radius: 5px;
 }
 </style>
