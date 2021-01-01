@@ -22,5 +22,6 @@ export interface Product {
 		name: string;
 		options: string;
 		type: string;
+		required: boolean;
 	}[];
 }

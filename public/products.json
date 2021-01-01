@@ -28,7 +28,8 @@
 		"customFields": [{
 			"name": "Size",
 			"options": "S|M|L|XL|2XL|3XL|4XL|5XL",
-			"type": "dropdown"
+			"type": "dropdown",
+			"required": true
 		}]
 	},
 	{
@@ -60,7 +61,8 @@
 		"customFields": [{
 			"name": "Size",
 			"options": "S|M|L|XL|2XL|3XL|4XL|5XL",
-			"type": "dropdown"
+			"type": "dropdown",
+			"required": true
 		}]
 	},
 	{
@@ -92,7 +94,8 @@
 		"customFields": [{
 			"name": "Size",
 			"options": "S|M|L|XL|2XL|3XL|4XL|5XL",
-			"type": "dropdown"
+			"type": "dropdown",
+			"required": true
 		}]
 	}
 ]
