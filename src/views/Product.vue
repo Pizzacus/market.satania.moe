@@ -39,7 +39,7 @@
 
 								<a
 									v-if="field.name.toLowerCase() === 'size'"
-									:href="sizeChart()"
+									:href="sizeChart"
 									class="size-info-button"
 									target="_blank"
 									rel="noopener"
@@ -151,7 +151,7 @@ const otherProducts = computed(() => products.filter(product => product.id !== p
 
 const customFieldValues: Ref<(undefined | string)[]> = ref(Array(product.value.customFields.length).fill(undefined));
 
-function sizeChart(): string {
+const sizeChart = computed(() => {
 	if (product.value == null) {
 		throw new Error("Product not found");
 	}
@@ -163,7 +163,7 @@ function sizeChart(): string {
 		case "shirt":
 			return "https://www.bellacanvas.com/spec/3001%20specs.pdf";
 	}
-}
+});
 </script>
 
 <style scoped>
