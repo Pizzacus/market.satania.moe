@@ -92,19 +92,27 @@
 							<b>Full refund</b> if returned within 4 weeks
 						</div>
 					</div>
-
 				</div>
 			</div>
+		</div>
+	</div>
+
+	<div class="other">
+		<h1>See our other products as well!</h1>
+
+		<div class="other-display">
+			<product-display v-for="other in otherProducts" :product="other" />
 		</div>
 	</div>
 </template>
 
 <script setup lang="ts">
-import { defineProps, inject, ref } from "vue";
+import { defineProps, inject, ref, computed } from "vue";
 import type { Ref } from "vue";
 import formatPrice from "../utils/format-price";
 import stateKey from "../state";
 import BuyButton from "../components/BuyButton.vue";
+import ProductDisplay from "../components/ProductDisplay.vue";
 
 import products from "../../public/products.json";
 
@@ -125,20 +133,22 @@ function allStrings(arr: any[]): arr is string[] {
 	return arr.every(val => typeof val === "string");
 }
 
-const product = products.find(product => product.id === props.id);
+const product = computed(() => products.find(product => product.id === props.id));
+const otherProducts = computed(() => products.filter(product => product.id !== props.id));
 
-if (product == null) {
+if (product.value == null) {
 	// TODO: 404 page
 	throw new Error("Product not found");
 }
 
-const customFieldValues: Ref<(undefined | string)[]> = ref(Array(product.customFields.length).fill(undefined));
+const customFieldValues: Ref<(undefined | string)[]> = ref(Array(product.value.customFields.length).fill(undefined));
 
 function sizeChart(): string {
-	if (product == null) {
+	if (product.value == null) {
 		throw new Error("Product not found");
 	}
-	switch (product.metadata.productType) {
+
+	switch (product.value.metadata.productType) {
 		case "hoodie":
 			return "https://www.bellacanvas.com/spec/3939.pdf";
 
@@ -309,5 +319,18 @@ hr.large-margin {
 	font-size: 14px;
 	margin-bottom: 20px;
 	border-radius: 5px;
+}
+
+.other h1 {
+	text-align: center;
+	margin: 50px 0;
+}
+
+.other-display {
+	display: grid;
+	grid-template-columns: repeat(2, auto);
+	gap: 35px;
+	align-items: top;
+	justify-content: center;
 }
 </style>
