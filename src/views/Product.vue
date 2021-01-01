@@ -1,7 +1,9 @@
 <template>
 	<div class="wrapper">
 		<div class="main-container">
-			<div class="slideshow"></div>
+			<div class="slideshow">
+				<product-slideshow :images="product.metadata.detailedImages"/>
+			</div>
 
 			<div class="product-details">
 				<h3>Satania Dropout</h3>
@@ -113,6 +115,7 @@ import formatPrice from "../utils/format-price";
 import stateKey from "../state";
 import BuyButton from "../components/BuyButton.vue";
 import ProductDisplay from "../components/ProductDisplay.vue";
+import ProductSlideshow from "../components/ProductSlideshow.vue";
 
 import products from "../../public/products.json";
 
@@ -133,13 +136,18 @@ function allStrings(arr: any[]): arr is string[] {
 	return arr.every(val => typeof val === "string");
 }
 
-const product = computed(() => products.find(product => product.id === props.id));
-const otherProducts = computed(() => products.filter(product => product.id !== props.id));
+const product = computed(() => {
+	const product = products.find(product => product.id === props.id);
 
-if (product.value == null) {
-	// TODO: 404 page
-	throw new Error("Product not found");
-}
+	if (product == null) {
+		// TODO: 404 page
+		throw new Error("Product not found");
+	}
+
+	return product;
+});
+
+const otherProducts = computed(() => products.filter(product => product.id !== props.id));
 
 const customFieldValues: Ref<(undefined | string)[]> = ref(Array(product.value.customFields.length).fill(undefined));
 
