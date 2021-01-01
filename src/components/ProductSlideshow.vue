@@ -198,7 +198,7 @@ onMounted(() => {
 }
 
 .embla__slide__thumbnail {
-	height: 90px;
+	height: 70px;
 	transition: opacity 0.2s;
 	border: 2px solid #000;
 	border-radius: 4px;
