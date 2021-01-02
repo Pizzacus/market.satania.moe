@@ -100,7 +100,7 @@
 	</div>
 
 	<div class="other">
-		<h1>See our other products as well!</h1>
+		<h1>See our other products as&nbsp;well!</h1>
 
 		<div class="other-display">
 			<product-display v-for="other in otherProducts" :product="other" />
@@ -174,10 +174,12 @@ const sizeChart = computed(() => {
 	background: #fff;
 	display: inline-grid;
 	margin: auto;
-	grid-template-columns: 720px 350px;
+	grid-template-columns: 2fr minmax(280px, 1fr);
 	gap: 20px;
 	padding: 20px;
 	text-align: start;
+	max-width: 1200px;
+	width: 100%;
 }
 
 .product-details h3, .product-details h1 {
@@ -301,25 +303,6 @@ hr.large-margin {
 	margin-right: 10px;
 }
 
-.price-feature {
-	display: flex;
-	width: 100%;
-}
-
-.price-feature .label {
-	flex: auto;
-}
-
-.price-feature .feature-price {
-	font-weight: bold;
-}
-
-.feature-info {
-	background: #F5F5F5;
-	font-size: 12px;
-	line-height: 1.25;
-}
-
 .notice {
 	background: #ea03;
 	padding: 10px;
@@ -338,7 +321,44 @@ hr.large-margin {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 	gap: 35px;
-	align-items: top;
+	align-items: flex-start;
 	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 767.98px) {
+	.main-container {
+		display: inline-block;
+		padding: 0;
+		padding-bottom: 15px;
+	}
+
+	.product-details {
+		padding: 0 8px;
+		max-width: 400px;
+		margin: auto;
+		margin-top: 15px;
+	}
+
+	.main-carousel .embla__viewport {
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;
+	}
+
+	.product-details h1 {
+		font-size: 7.5vw;
+	}
+
+	.other h1 {
+		font-size:6vw;
+	}
+}
+
+@media (max-width: 575.98px) {	
+	.other-display {
+		gap: 16px;
+		padding: 0 8px;
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 </style>

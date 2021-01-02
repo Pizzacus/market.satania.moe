@@ -166,6 +166,8 @@ onMounted(() => {
 
 .embla__slide__img {
 	width: 100%;
+	min-height: 310px;
+	object-fit: cover;
 }
 
 .embla--thumb {
@@ -215,9 +217,26 @@ onMounted(() => {
 
 .hidden-owo {
 	position: absolute;
-	left: 50px;
+	left: 7%;
 	top: 50%;
 	z-index: 1;
 	text-align: center;
+}
+
+@media (max-width: 991.98px) {
+	.embla__slide__thumbnail {
+		height: 60px;
+	}
+}
+
+@media (max-width: 767.98px) {
+	.embla__slide__img {
+		height: 100vw;
+		object-fit: cover;
+	}
+
+	.main-carousel .embla__viewport {
+		border-radius: 0;
+	}
 }
 </style>

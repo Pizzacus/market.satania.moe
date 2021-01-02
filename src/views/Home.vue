@@ -132,7 +132,7 @@ h2 {
 	display: grid;
 	grid-template-columns: repeat(2, auto);
 	gap: 35px;
-	align-items: top;
+	align-items: flex-start;
 	justify-content: center;
 	margin-top: 35px;
 }

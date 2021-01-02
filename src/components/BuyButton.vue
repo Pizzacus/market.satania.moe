@@ -185,6 +185,10 @@ function openCart(): Promise<void> {
 </script>
 
 <style scoped>
+.button-wrapper {
+	display: inline-block;
+}
+
 button {
 	width: 100%;
 }

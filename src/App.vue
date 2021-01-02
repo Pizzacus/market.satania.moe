@@ -14,7 +14,7 @@
 		</a>
 
 		<h3>Have any questions? Requests? Issues?</h3>
-		<h4>Tell us in <span class="channel">#satania-market</span> on Satania Dropout!</h4>
+		<h4>Tell us in <span class="channel">#satania-market</span> on Satania&nbsp;Dropout!</h4>
 	</footer>
 </template>
 
@@ -102,7 +102,9 @@ provide(stateKey, data);
 <style scoped>
 footer {
 	text-align: center;
+	padding: 0 8px;
 }
+
 .github-notice {
 	background: var(--gray);
 	border-radius: 10000px;
@@ -125,5 +127,11 @@ footer {
 .channel {
 	background: rgba(114,137,218,.1);
 	color: #7289da;
+}
+
+@media (max-width: 767.98px) {
+	.github-notice {
+		font-size: 16px;
+	}
 }
 </style>
