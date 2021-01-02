@@ -2,6 +2,7 @@ import { InjectionKey } from "vue";
 
 export enum CurrencyEnum {
 	aud,
+	cad,
 	gbp,
 	eur,
 	nzd,

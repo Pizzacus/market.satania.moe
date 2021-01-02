@@ -7,6 +7,7 @@
 		"shippable": true,
 		"price": {
 			"aud": 12.3,
+			"cad": 12.3,
 			"gbp": 12.3,
 			"eur": 12.3,
 			"nzd": 12.3,
@@ -42,6 +43,7 @@
 		"shippable": true,
 		"price": {
 			"aud": 123,
+			"cad": 911,
 			"gbp": 123,
 			"eur": 123,
 			"nzd": 123,
@@ -76,6 +78,7 @@
 		"shippable": true,
 		"price": {
 			"aud": 1.23,
+			"cad": 1.23,
 			"gbp": 1.23,
 			"eur": 1.23,
 			"nzd": 1.23,

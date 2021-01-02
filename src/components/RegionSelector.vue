@@ -29,6 +29,7 @@
 				<label for="currency-select">Pay with</label>
 				<select name="currency" id="currency-select" v-model="state.currency">
 					<option value="aud">Australian dollar (AU$)</option>
+					<option value="cad">Canadian dollar (CA$)</option>
 					<option value="gbp">British pound (£)</option>
 					<option value="eur">Euro (€)</option>
 					<option value="nzd">New Zealand dollar (NZ$)</option>

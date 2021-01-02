@@ -2,6 +2,7 @@ import { CurrencyString } from "../state";
 
 const DOLLARS_CODES = {
 	aud: "AU",
+	cad: "CA",
 	nzd: "NZ",
 	sgd: "SG",
 	usd: "US",
