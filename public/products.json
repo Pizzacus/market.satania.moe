@@ -23,6 +23,7 @@
 			],
 			"closeupImage": "https://picsum.photos/400?uniquec0",
 			"featuredImageIndex": 2,
+			"gotSample": false,
 			"productType": "hoodie",
 			"notice": "This is a notice that shows <b>how serious I really am.</b> I'm going to use that for boring purposes, CC attributions, and for cool purposes, like showing I donated to the EFF because a font designer told me to."
 		},
@@ -57,6 +58,7 @@
 			],
 			"closeupImage": "https://picsum.photos/400?uniquec1",
 			"featuredImageIndex": 2,
+			"gotSample": false,
 			"productType": "shirt"
 		},
 		"customFields": [{
@@ -90,6 +92,7 @@
 			],
 			"closeupImage": "https://picsum.photos/400?uniquec2",
 			"featuredImageIndex": 2,
+			"gotSample": true,
 			"productType": "shirt"
 		},
 		"customFields": [{

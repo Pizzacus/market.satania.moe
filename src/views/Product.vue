@@ -96,6 +96,12 @@
 					</div>
 				</div>
 			</div>
+
+			<div class="sample-disclaimer" v-if="!product.metadata.gotSample">
+				Due to shipping complications, we weren't able to receive
+				samples for this product. <br /> However, we expect the quality to be
+				on par with <router-link to="/product/retro-demon">Retro Demon</router-link>
+			</div>
 		</div>
 	</div>
 
@@ -180,6 +186,11 @@ const sizeChart = computed(() => {
 	text-align: start;
 	max-width: 1200px;
 	width: 100%;
+}
+
+.product-details {
+	grid-row: 1 / 3;
+    grid-column: 2;
 }
 
 .product-details h3, .product-details h1 {
@@ -326,6 +337,12 @@ hr.large-margin {
 	align-items: center;
 }
 
+.sample-disclaimer {
+	text-align: end;
+	padding: 8px;
+	border-top: #888 solid 2px;
+}
+
 @media (max-width: 767.98px) {
 	.main-container {
 		display: inline-block;
@@ -351,6 +368,10 @@ hr.large-margin {
 
 	.other h1 {
 		font-size:6vw;
+	}
+
+	.sample-disclaimer {
+		margin-top: 20px;
 	}
 }
 

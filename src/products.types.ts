@@ -17,6 +17,7 @@ export interface Product {
 		featuredImageIndex: number;
 		productType: "hoodie" | "shirt";
 		closeupImage: string;
+		gotSample: boolean;
 		notice?: string;
 	};
 	customFields: {
