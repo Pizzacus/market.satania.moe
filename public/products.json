@@ -14,20 +14,20 @@
 			"sgd": 32,
 			"usd": 24
 		},
-		"image": "/product_retro_demon.jpg",
+		"image": "/images/product_retro_demon.jpg",
 		"metadata": {
 			"htmlDescription": "Dark Grey Heather <b>T-shirt</b><br/>Made by <b>daniel but christmas I guess#1119</b>",
 			"detailedImages": [
-				"/slide_retro_demon_1.jpg",
-				"/slide_retro_demon_2.png",
-				"/slide_retro_demon_3.jpg",
-				"/slide_retro_demon_4.jpg"
+				"/images/slide_retro_demon_1.jpg",
+				"/images/slide_retro_demon_2.png",
+				"/images/slide_retro_demon_3.jpg",
+				"/images/slide_retro_demon_4.jpg"
 			],
-			"closeupImage": "product_retro_demon_closeup.png",
+			"closeupImage": "/images/product_retro_demon_closeup.png",
 			"featuredImageIndex": 0,
 			"gotSample": true,
 			"productType": "shirt",
-			"notice": "The license of the font used on this design, Santana <a href=\"https://www.fontsquirrel.com/license/Santana\" target=\"_blank\" rel=\"noopener\">(view it here)</a> suggests nicely that we donate to an organisation if we use it commercially.<br /><br />Although it clearly says this is optional, we decided to honour it and <a href=\"/donation.png\" target=\"_blank\" rel=\"noopener\">donated US$65 to the EFF</a>, a very established non-profit that fights for user privacy and digital freedom. <a href=\"https://www.eff.org/\" target=\"_blank\" rel=\"noopener\">(Learn more about the EFF here.)</a>"
+			"notice": "The license of the font used on this design, Santana <a href=\"https://www.fontsquirrel.com/license/Santana\" target=\"_blank\" rel=\"noopener\">(view it here)</a> suggests nicely that we donate to an organisation if we use it commercially.<br /><br />Although it clearly says this is optional, we decided to honour it and <a href=\"/images/donation.png\" target=\"_blank\" rel=\"noopener\">donated US$65 to the EFF</a>, a very established non-profit that fights for user privacy and digital freedom. <a href=\"https://www.eff.org/\" target=\"_blank\" rel=\"noopener\">(Learn more about the EFF here.)</a>"
 		},
 		"customFields": [{
 			"name": "Size",
@@ -52,15 +52,15 @@
 			"sgd": 32,
 			"usd": 24
 		},
-		"image": "/product_absolutely_devilish.jpg",
+		"image": "/images/product_absolutely_devilish.jpg",
 		"metadata": {
 			"htmlDescription": "Oxblood Black <b>T-shirt</b><br />絶対に悪魔っぱい = Absolutely Devilish<br/>Made by <b>Deesco#1939</b>",
 			"detailedImages": [
-				"/slide_absolutely_devilish_1.jpg",
-				"/slide_absolutely_devilish_2.png",
-				"/slide_absolutely_devilish_3.jpg"
+				"/images/slide_absolutely_devilish_1.jpg",
+				"/images/slide_absolutely_devilish_2.png",
+				"/images/slide_absolutely_devilish_3.jpg"
 			],
-			"closeupImage": "/product_absolutely_devilish_closeup.jpg",
+			"closeupImage": "/images/product_absolutely_devilish_closeup.jpg",
 			"featuredImageIndex": 0,
 			"gotSample": false,
 			"productType": "shirt"
@@ -87,19 +87,19 @@
 			"sgd": 48,
 			"usd": 36
 		},
-		"image": "/product_moe_fusion.jpg",
+		"image": "/images/product_moe_fusion.jpg",
 		"metadata": {
 			"htmlDescription": "Black <b>Hoodie</b><br />萌え = Moe (feeling when you see a cute anime girl)<br/>Made by <b>Pizzacus#2884</b>",
 			"detailedImages": [
-				"/slide_moe_fusion_1.jpg",
-				"/slide_moe_fusion_2.png",
-				"/slide_moe_fusion_3.jpg"
+				"/images/slide_moe_fusion_1.jpg",
+				"/images/slide_moe_fusion_2.png",
+				"/images/slide_moe_fusion_3.jpg"
 			],
-			"closeupImage": "/product_moe_fusion_closeup.jpg",
+			"closeupImage": "/images/product_moe_fusion_closeup.jpg",
 			"featuredImageIndex": 0,
 			"gotSample": false,
 			"productType": "hoodie",
-			"notice": "Based on <a href=\"https://kanjivg.tagaini.net/\">KanjiVG</a> by Ulrich Apel &amp; KanjiVG contributors, used under <a href=\"https://creativecommons.org/licenses/by-sa/3.0\" target=\"_blank\" rel=\"license noopener noreferrer\">CC BY-SA 3.0</a>. KanjiVG is a repository of diagrams of hand-written Japanese characters which were used in the making of this design.<br /><br /><div xmlns:dct=\"http://purl.org/dc/terms/\" xmlns:cc=\"http://creativecommons.org/ns#\"><span property=\"dct:title\">Moe Fusion</span> by <span property=\"cc:attributionName\">Pizzacus</span> is licensed under <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"license noopener noreferrer\" style=\"display:inline-block;\">CC BY-SA 4.0<img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg\"><img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg\"><img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/sa.svg\"></a></div><br />This license also applies to all media that incorporate this design on this website. <a href=\"/moe_fusion.png\">You can dowload the design here.</a>"
+			"notice": "Based on <a href=\"https://kanjivg.tagaini.net/\">KanjiVG</a> by Ulrich Apel &amp; KanjiVG contributors, used under <a href=\"https://creativecommons.org/licenses/by-sa/3.0\" target=\"_blank\" rel=\"license noopener noreferrer\">CC BY-SA 3.0</a>. KanjiVG is a repository of diagrams of hand-written Japanese characters which were used in the making of this design.<br /><br /><div xmlns:dct=\"http://purl.org/dc/terms/\" xmlns:cc=\"http://creativecommons.org/ns#\"><span property=\"dct:title\">Moe Fusion</span> by <span property=\"cc:attributionName\">Pizzacus</span> is licensed under <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"license noopener noreferrer\" style=\"display:inline-block;\">CC BY-SA 4.0<img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg\"><img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg\"><img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/sa.svg\"></a></div><br />This license also applies to all media that incorporate this design on this website. <a href=\"/images/moe_fusion.png\">You can dowload the design here.</a>"
 		},
 		"customFields": [{
 			"name": "Size",
