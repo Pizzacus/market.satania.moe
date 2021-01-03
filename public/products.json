@@ -23,7 +23,7 @@
 				"/images/slide_retro_demon_3.jpg",
 				"/images/slide_retro_demon_4.jpg"
 			],
-			"closeupImage": "/images/product_retro_demon_closeup.png",
+			"closeupImage": "/images/product_retro_demon_closeup.jpg",
 			"featuredImageIndex": 0,
 			"gotSample": true,
 			"productType": "shirt",
@@ -60,7 +60,7 @@
 				"/images/slide_absolutely_devilish_2.png",
 				"/images/slide_absolutely_devilish_3.jpg"
 			],
-			"closeupImage": "/images/product_absolutely_devilish_closeup.jpg",
+			"closeupImage": "/images/product_absolutely_devilish_closeup.png",
 			"featuredImageIndex": 0,
 			"gotSample": false,
 			"productType": "shirt"

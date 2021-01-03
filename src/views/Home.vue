@@ -44,7 +44,8 @@
 			<p><b>Take a look at this real-life photo!</b></p>
 
 			<a href="/assets/print-quality/full.jpg" class="quality-link" target="_blank" rel="noopener">
-				<picture class="quality-pic">
+				<!-- Picture may be broken with vite it seems -->
+				<!--<picture class="quality-pic">
 					<source
 						srcset="/assets/print-quality/1000w.webp 1000w, /assets/print-quality/2000w.webp 2000w"
 						type="image/webp"
@@ -52,9 +53,9 @@
 					<source
 						srcset="/assets/print-quality/1000w.jpg 1000w, /assets/print-quality/2000w.jpg 2000w"
 						type="image/jpeg"
-					/>
+					/>-->
 					<img src="/assets/print-quality/1000w.jpg" alt="" />
-				</picture>
+				<!--</picture>-->
 
 				<div class="full-quality-badge">Click to see full resolution</div>
 			</a>

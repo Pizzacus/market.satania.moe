@@ -7,7 +7,7 @@
 		>
 			<div class="embla__slide">
 				<div class="inner-slide" :style="{
-						'--image': `url(/assets/satania-new-year.jpg)`,
+						'--image': `url(/images/satania-new-year.jpg)`,
 						'background-position': 'left center',
 					}">
 					<div class="slide-info">
