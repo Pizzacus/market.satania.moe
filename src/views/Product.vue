@@ -59,7 +59,7 @@
 					</div>
 				</div>
 
-				<div class="button-wrapper">
+				<div class="button-container">
 					<buy-button 
 						class="buy-button" 
 						:product="product" 
@@ -98,9 +98,11 @@
 			</div>
 
 			<div class="sample-disclaimer" v-if="!product.metadata.gotSample">
+				<b>For this product, these pictures are mock-ups.</b>
 				Due to shipping complications, we weren't able to receive
-				samples for this product. <br /> However, we expect the quality to be
+				samples for this product in time. However, we expect the quality to be
 				on par with <router-link to="/product/retro-demon">Retro Demon</router-link>
+				and differences between these mock-ups and the product to be marginal.
 			</div>
 		</div>
 	</div>
@@ -293,7 +295,7 @@ hr.large-margin {
 	background: #0002;
 }
 
-.product-details .button-wrapper {
+.product-details .button-container {
 	margin: 20px 0;
 }
 
