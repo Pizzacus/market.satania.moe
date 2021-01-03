@@ -7,7 +7,8 @@
 		>
 			<div class="embla__slide">
 				<div class="inner-slide" :style="{
-						'--image': `url(https://picsum.photos/1000/500?unique100)`,
+						'--image': `url(/assets/satania-new-year.jpg)`,
+						'background-position': 'left center',
 					}">
 					<div class="slide-info">
 						<div class="product-name">
