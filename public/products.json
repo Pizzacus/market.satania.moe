@@ -1,106 +1,109 @@
 [
 	{
-		"id": "100-percent-devilish",
-		"name": "100% Devilish",
-		"description": "Black Hoodie | Made by Deesco#1939",
+		"id": "retro-demon",
+		"name": "Retro Demon",
+		"description": "Dark Grey Heather T-shirt | Made by daniel but christmas I guess#1119",
 		"url": "/products.json",
 		"shippable": true,
 		"price": {
-			"aud": 12.3,
-			"cad": 12.3,
-			"gbp": 12.3,
-			"eur": 12.3,
-			"nzd": 12.3,
-			"sgd": 12.3,
-			"usd": 12.3
+			"aud": 32,
+			"cad": 32,
+			"gbp": 18,
+			"eur": 20,
+			"nzd": 34,
+			"sgd": 32,
+			"usd": 24
 		},
-		"image": "https://picsum.photos/400?unique0",
+		"image": "/product_retro_demon.jpg",
 		"metadata": {
-			"htmlDescription": "Black <b>Hoodie</b><br/>Made by <b>Deesco#1939</b>",
+			"htmlDescription": "Dark Grey Heather <b>T-shirt</b><br/>Made by <b>daniel but christmas I guess#1119</b>",
 			"detailedImages": [
-				"https://picsum.photos/1000/500?unique1",
-				"https://picsum.photos/1000/500?unique2",
-				"https://picsum.photos/1000/500?unique3"
+				"/slide_retro_demon_1.jpg",
+				"/slide_retro_demon_2.png",
+				"/slide_retro_demon_3.jpg",
+				"/slide_retro_demon_4.jpg"
 			],
-			"closeupImage": "https://picsum.photos/400?uniquec0",
-			"featuredImageIndex": 2,
+			"closeupImage": "product_retro_demon_closeup.png",
+			"featuredImageIndex": 0,
+			"gotSample": true,
+			"productType": "shirt",
+			"notice": "The license of the font used on this design, Santana <a href=\"https://www.fontsquirrel.com/license/Santana\" target=\"_blank\" rel=\"noopener\">(view it here)</a> suggests nicely that we donate to an organisation if we use it commercially.<br /><br />Although it clearly says this is optional, we decided to honour it and <a href=\"/donation.png\" target=\"_blank\" rel=\"noopener\">donated US$65 to the EFF</a>, a very established non-profit that fights for user privacy and digital freedom. <a href=\"https://www.eff.org/\" target=\"_blank\" rel=\"noopener\">(Learn more about the EFF here.)</a>"
+		},
+		"customFields": [{
+			"name": "Size",
+			"options": "XS|S|M|L|XL|2XL|3XL|4XL",
+			"type": "dropdown",
+			"required": true,
+			"notice": ""
+		}]
+	},
+	{
+		"id": "absolutely-devilish",
+		"name": "Absolutely Devilish",
+		"description": "Oxblood Black T-shirt | Made by Deesco#1939",
+		"url": "/products.json",
+		"shippable": true,
+		"price": {
+			"aud": 32,
+			"cad": 32,
+			"gbp": 18,
+			"eur": 20,
+			"nzd": 34,
+			"sgd": 32,
+			"usd": 24
+		},
+		"image": "/product_absolutely_devilish.jpg",
+		"metadata": {
+			"htmlDescription": "Oxblood Black <b>T-shirt</b><br />絶対に悪魔っぱい = Absolutely Devilish<br/>Made by <b>Deesco#1939</b>",
+			"detailedImages": [
+				"/slide_absolutely_devilish_1.jpg",
+				"/slide_absolutely_devilish_2.png",
+				"/slide_absolutely_devilish_3.jpg"
+			],
+			"closeupImage": "/product_absolutely_devilish_closeup.jpg",
+			"featuredImageIndex": 0,
+			"gotSample": false,
+			"productType": "shirt"
+		},
+		"customFields": [{
+			"name": "Size",
+			"options": "S|M|L|XL|2XL|3XL|4XL",
+			"type": "dropdown",
+			"required": true
+		}]
+	},
+	{
+		"id": "moe-fusion",
+		"name": "Moe Fusion",
+		"description": "Black Hoodie | Made by Pizzacus#2884",
+		"url": "/products.json",
+		"shippable": true,
+		"price": {
+			"aud": 46,
+			"cad": 46,
+			"gbp": 26,
+			"eur": 30,
+			"nzd": 50,
+			"sgd": 48,
+			"usd": 36
+		},
+		"image": "/product_moe_fusion.jpg",
+		"metadata": {
+			"htmlDescription": "Black <b>Hoodie</b><br />萌え = Moe (feeling when you see a cute anime girl)<br/>Made by <b>Pizzacus#2884</b>",
+			"detailedImages": [
+				"/slide_moe_fusion_1.jpg",
+				"/slide_moe_fusion_2.png",
+				"/slide_moe_fusion_3.jpg"
+			],
+			"closeupImage": "/product_moe_fusion_closeup.jpg",
+			"featuredImageIndex": 0,
 			"gotSample": false,
 			"productType": "hoodie",
-			"notice": "This is a notice that shows <b>how serious I really am.</b> I'm going to use that for boring purposes, CC attributions, and for cool purposes, like showing I donated to the EFF because a font designer told me to."
+			"notice": "Based on <a href=\"https://kanjivg.tagaini.net/\">KanjiVG</a> by Ulrich Apel &amp; KanjiVG contributors, used under <a href=\"https://creativecommons.org/licenses/by-sa/3.0\" target=\"_blank\" rel=\"license noopener noreferrer\">CC BY-SA 3.0</a>. KanjiVG is a repository of diagrams of hand-written Japanese characters which were used in the making of this design.<br /><br /><div xmlns:dct=\"http://purl.org/dc/terms/\" xmlns:cc=\"http://creativecommons.org/ns#\"><span property=\"dct:title\">Moe Fusion</span> by <span property=\"cc:attributionName\">Pizzacus</span> is licensed under <a rel=\"license\" href=\"https://creativecommons.org/licenses/by-sa/4.0\" target=\"_blank\" rel=\"license noopener noreferrer\" style=\"display:inline-block;\">CC BY-SA 4.0<img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/cc.svg\"><img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/by.svg\"><img style=\"height:22px!important;margin-left:3px;vertical-align:text-bottom;\" src=\"https://mirrors.creativecommons.org/presskit/icons/sa.svg\"></a></div><br />This license also applies to all media that incorporate this design on this website. <a href=\"/moe_fusion.png\">You can dowload the design here.</a>"
 		},
 		"customFields": [{
 			"name": "Size",
-			"options": "S|M|L|XL|2XL|3XL|4XL|5XL",
-			"type": "dropdown",
-			"required": true
-		}]
-	},
-	{
-		"id": "101-percent-devilish",
-		"name": "101% Devilish",
-		"description": "Black T-shirt | Made by Deesco#1939",
-		"url": "/products.json",
-		"shippable": true,
-		"price": {
-			"aud": 123,
-			"cad": 911,
-			"gbp": 123,
-			"eur": 123,
-			"nzd": 123,
-			"sgd": 123,
-			"usd": 123
-		},
-		"image": "https://picsum.photos/400?unique1",
-		"metadata": {
-			"htmlDescription": "Black <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
-			"detailedImages": [
-				"https://picsum.photos/1000/500?unique4",
-				"https://picsum.photos/1000/500?unique5",
-				"https://picsum.photos/1000/500?unique6"
-			],
-			"closeupImage": "https://picsum.photos/400?uniquec1",
-			"featuredImageIndex": 2,
-			"gotSample": false,
-			"productType": "shirt"
-		},
-		"customFields": [{
-			"name": "Size",
-			"options": "S|M|L|XL|2XL|3XL|4XL|5XL",
-			"type": "dropdown",
-			"required": true
-		}]
-	},
-	{
-		"id": "102-percent-devilish",
-		"name": "102% Devilish",
-		"description": "Black heather T-shirt | Made by Deesco#1939",
-		"url": "/products.json",
-		"shippable": true,
-		"price": {
-			"aud": 1.23,
-			"cad": 1.23,
-			"gbp": 1.23,
-			"eur": 1.23,
-			"nzd": 1.23,
-			"sgd": 1.23,
-			"usd": 1.23
-		},
-		"image": "https://picsum.photos/400?unique2",
-		"metadata": {
-			"htmlDescription": "Black heather <b>T-shirt</b><br/>Made by <b>Deesco#1939</b>",
-			"detailedImages": [
-				"https://picsum.photos/1000/500?unique7",
-				"https://picsum.photos/1000/500?unique8",
-				"https://picsum.photos/1000/500?unique9"
-			],
-			"closeupImage": "https://picsum.photos/400?uniquec2",
-			"featuredImageIndex": 2,
-			"gotSample": true,
-			"productType": "shirt"
-		},
-		"customFields": [{
-			"name": "Size",
-			"options": "S|M|L|XL|2XL|3XL|4XL|5XL",
+			"options": "XS|S|M|L|XL|2XL",
 			"type": "dropdown",
 			"required": true
 		}]
