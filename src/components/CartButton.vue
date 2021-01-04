@@ -68,6 +68,7 @@ onUnmounted(() => {
 <style scoped>
 button {
 	display: flex;
+	align-items: center;
 	position: fixed;
 	top: 30%;
 	right: 0;

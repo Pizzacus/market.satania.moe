@@ -43,7 +43,7 @@ const props = defineProps({
 	filter: brightness(0.9);
 }
 
-.question:not(.question:first-of-type) {
+.question:not(:first-of-type) {
 	border-top: 2px solid #0002;
 }
 
