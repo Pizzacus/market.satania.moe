@@ -21,7 +21,7 @@
 				community, and these members, too!
 			</p>
 
-			<p><u><b>Sales end on January 17th.</b></u></p>
+			<p><u><b>Sales end on January 17th, 2021.</b></u></p>
 
 			<div class="products">
 				<product-display v-for="product in products" :product="product" />
