@@ -72,10 +72,10 @@
 
 				<div class="feature-list">
 					<div class="feature">
-						<img src="/assets/shipping.svg" alt="" class="feature-img" role="presentation" />
+						<img src="/assets/package.svg" alt="" class="feature-img" role="presentation" />
 
 						<div class="feature-text">
-							Ship internationally, pay in <b>US Dollars</b>
+							<b>International shipping</b><br />(cost calculated at checkout)
 						</div>
 					</div>
 

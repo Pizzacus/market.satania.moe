@@ -13,7 +13,7 @@
 			</p>
 				
 			<p>
-				This year, we've invited members of the community to
+				This year, we've invited community members to
 				contribute their designs and get a share of the revenues
 				made from the event!
 				
@@ -35,7 +35,7 @@
 
 			<p>
 				Last year, the print quality did not match our expectations
-				(and the claims of the supplier) and fixing that was the number
+				(and the supplier's claims) and fixing that was the number
 				one priority. We changed to a different supplier, they cost
 				about 2x more to us, but the samples we received looked much
 				better.
