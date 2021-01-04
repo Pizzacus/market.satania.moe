@@ -83,14 +83,14 @@ if (storageAvailable()) {
 	});
 }
 
-getIpCountry().then((country) => {
+/*getIpCountry().then((country) => {
 	data.ipCountry = country;
 
 	if (country && !ipCountryOverwritten) {
 		data.country = country;
 		data.currency = getCurrency(country);
 	}
-});
+});*/
 
 snipcartReady().then(() => {
 	Snipcart.api.session.setCurrency(data.currency);
