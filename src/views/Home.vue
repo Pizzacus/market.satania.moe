@@ -43,7 +43,7 @@
 
 			<p><b>Take a look at this real-life photo!</b></p>
 
-			<a href="/assets/print-quality/full.jpg" class="quality-link" target="_blank" rel="noopener">
+			<a href="/images/print_quality.jpg" class="quality-link" target="_blank" rel="noopener">
 				<!-- Picture may be broken with vite it seems -->
 				<!--<picture class="quality-pic">
 					<source
