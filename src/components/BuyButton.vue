@@ -45,7 +45,7 @@
 </template>
 
 <script setup lang="ts">
-import { defineProps, inject, onUnmounted, ref } from "vue";
+import { defineProps, inject, onUnmounted, ref, watch } from "vue";
 import stateKey from "../state";
 import type { PropType, Ref } from "vue";
 import type { Product } from "src/products.types";
@@ -77,13 +77,20 @@ const props = defineProps({
 
 const inCart: Ref<boolean> = ref(false);
 
+function refreshItemInCart() {
+	inCart.value = Snipcart.store
+		.getState()
+		.cart.items.items.some(
+			(item: any) => item.id === props.product.id
+		);
+}
+
 const ready: Promise<void> = snipcartReady()
 	.then(() => {
-		inCart.value = Snipcart.store
-			.getState()
-			.cart.items.items.some(
-				(item: any) => item.id === props.product.id
-			);
+		refreshItemInCart();
+		watch(state, () => {
+			window.requestAnimationFrame(refreshItemInCart);
+		});
 	});
 
 let unsubscribeFromAdding: null | (() => void) = null;

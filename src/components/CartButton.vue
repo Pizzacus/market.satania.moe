@@ -12,7 +12,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onUnmounted } from "vue";
+import { ref, onUnmounted, inject, watch } from "vue";
+import stateKey from "../state";
 import snipcartReady from "../utils/snipcart-ready";
 
 declare var Snipcart: any;
@@ -23,6 +24,12 @@ const snipcartNode = document.getElementById("snipcart") as HTMLDivElement;
 
 if (!snipcartNode) {
 	throw new Error("Couldn't find the Snipcart node");
+}
+
+const state = inject(stateKey);
+
+if (!state) {
+	throw new TypeError("State not defined.");
 }
 
 let unsubscribeFromAdding: null | (() => void) = null;
@@ -44,6 +51,9 @@ snipcartReady().then(() => {
 	unsubscribeFromAdded = Snipcart.events.on("item.added", updateCount);
 	unsubscribeFromUpdated = Snipcart.events.on("item.updated", updateCount);
 	unsubscribeFromRemoved = Snipcart.events.on("item.removed", updateCount);
+	watch(state, () => {
+		window.requestAnimationFrame(updateCount);
+	});
 });
 
 onUnmounted(() => {
